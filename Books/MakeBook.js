@@ -1,5 +1,5 @@
 var txt = '';   //小说
-var curChapter = 0;
+var curChapter = 0; //章节数 - 1
 var books = [];
 var GoToLock = false;    //进程锁
 
@@ -29,7 +29,6 @@ function UpdateChapter() {
     let value = $('[name=cptind]').val();
     value = parseInt(value) - 1;
     //alert(value);
-    curChapter = value;
     GoToChapter(value);
 }
 
@@ -38,9 +37,16 @@ function GoToChapter(index) {
     if (index < 0 || index > txt.length) return 1;
     if (txt[index]) {
         $('#content').html(txt[index].split('\n').join('<br>'));
+        curChapter = index;
         return 1;
     }
     else return 0;
+}
+
+//上一章
+function BackChapter() {
+    curChapter--;
+    if (GoToChapter(curChapter) == 0) BackChapter();
 }
 
 //下一章
