@@ -4,7 +4,7 @@ var books = [];
 var GoToLock = false;    //进程锁
 
 function Split(str) {
-    let tmp = str.split(/第.*?章/)
+    let tmp = str.split(/第.*?章\s/)
     tmp.shift()
     return tmp;
 }
@@ -84,6 +84,7 @@ function UpdateList(data) {
         btn.onclick = () => {GoToBook(element.urlname)};
         btn.innerText = element.name;
         form.append(btn);
+        form.append("<br><br>")
     })
     $('#booklist').show();
     $('#loading').hide();
