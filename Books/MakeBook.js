@@ -4,7 +4,7 @@ var books = [];
 var GoToLock = false;    //进程锁
 
 function Split(str) {
-    let tmp = str.split(/第.*?章\s/)
+    let tmp = str.split(/第.*?章/)
     tmp.shift()
     return tmp;
 }
@@ -35,14 +35,18 @@ function UpdateChapter() {
 
 //跳转章节
 function GoToChapter(index) {
-    if (index < 0 || index > txt.length) return;
-    $('#content').html(txt[index].split('\n').join('<br>'));
+    if (index < 0 || index > txt.length) return 1;
+    if (txt[index]) {
+        $('#content').html(txt[index].split('\n').join('<br>'));
+        return 1;
+    }
+    else return 0;
 }
 
 //下一章
 function NextChapter() {
     curChapter++;
-    GoToChapter(curChapter);
+    if (GoToChapter(curChapter) == 0) NextChapter();
 }
 
 //Get请求
