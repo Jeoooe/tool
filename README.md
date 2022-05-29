@@ -1,5 +1,5 @@
 # 小工具
-[工具总览网址](jeoooe.github.io/tool/)
+[工具总览网址](http://jeoooe.github.io/tool/)
 
 + 小说阅读 alpha
   + 章节识别（ 只能识别"章" ,不准确)
