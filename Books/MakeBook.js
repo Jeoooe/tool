@@ -2,6 +2,7 @@ var txt = '';   //小说
 var curChapter = 0; //章节数 - 1
 var books = [];
 var GoToLock = false;    //进程锁
+var curBook = '';	 //当前书目
 var RmvEmp = (arr) => {
 	for(let i = 0; i < arr.length; i++) {
 		if(arr[i] == undefined) {
@@ -20,19 +21,25 @@ function Split(str) {
     return tmp;
 }
 
-
+//设置文本
 function SetTxt(str) {
-    if (typeof str == 'string') txt = str;
+    if (typeof str == 'string') {
+		txt = str;
+		txt = Split(txt);	//分割
+	}
 }
 
-//页面初始化
+//阅读页面初始化
 function BookReadInit() {
-    txt = Split(txt);
+	$('#booklist').hide();
+    $('#loading').show();
     for (let i = 1;i <= txt.length;i++) {
         txt[i - 1] = `第${i}章` + txt[i - 1];
     }
     $('[name=cptsum]').text(`共${txt.length}章`);
     GoToChapter(0);
+	$('#loading').hide();
+    $('#bookread').show();
 };
 
 //跳转按钮 onclick
@@ -75,21 +82,24 @@ function Get(urlName,func) {
 //书本跳转
 function GoToBook(bookname) {
     if (GoToLock) return;   //防止多次加载
-    else {
-        GoToLock = true;    //锁
-        $('#booklist').hide();
-        $('#loading').show();
+	GoToLock = true;    //锁
+	if (curBook !== bookname) {	//不重复进入
+		curBook = bookname;
         urlname = bookname + '.txt';
+		//请求小说
         Get(urlname,(data) => {
             if (data) {
                 SetTxt(data);
                 BookReadInit();
-                $('#booklist').hide();
-                $('#loading').hide();
-                $('#bookread').show();
                 GoToLock = false;   //开锁
             }
         })
+	}
+	
+	//重复进入同一本书
+    else {  
+		BookReadInit();
+        GoToLock = false;   //开锁
     }
 }
 
@@ -124,7 +134,7 @@ function ShelterInit() {
 
 //返回目录
 function BackToList() {
-    txt = ''; 
+    //txt = ''; 
     $('#bookread').hide();
     $('#loading').show();
     ShelterInit();
