@@ -2,10 +2,21 @@ var txt = '';   //小说
 var curChapter = 0; //章节数 - 1
 var books = [];
 var GoToLock = false;    //进程锁
+var RmvEmp = (arr) => {
+	for(let i = 0; i < arr.length; i++) {
+		if(arr[i] == undefined) {
+			arr.splice(i,1);
+			i = i - 1;
+		}
+    }
+	return arr;
+}
 
+//分割章节
 function Split(str) {
-    let tmp = str.split(/第.*?章/)
-    tmp.shift()
+    let tmp = str.split(/\s第.*?章[\s：]/);	//分章
+    //while !(tmp[0]) tmp.shift();
+	tmp = RmvEmp(tmp);
     return tmp;
 }
 
@@ -22,7 +33,7 @@ function BookReadInit() {
     }
     $('[name=cptsum]').text(`共${txt.length}章`);
     GoToChapter(0);
-}
+};
 
 //跳转按钮 onclick
 function UpdateChapter() {
