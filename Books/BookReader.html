@@ -3,8 +3,10 @@
 <head>
     <title>BookReader</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="jquery-3.5.1.min.js"></script>
     <script src="MakeBook.js"></script>
+    <script src="TestWnd.js"></script>
 </head>
 <body>
     <p id="loading">Loading....</p>
@@ -24,11 +26,25 @@
         <button type="button" onclick="NextChapter()">下一章</button>
         <button type="button" onclick="BackToList()">返回目录</button>
     </div>
-
+    <br><br><br>
+    <div id="testwnd" >
+        <button type="button" onclick="" class="testswitch">开启调试平台</button>
+        <table>
+            <tr>
+                <input type="text" class="inputbox">
+            </tr>
+            <tr>
+                <textarea class="outputbox">></textarea>
+            </tr>
+        </table>
+    </div>  
     <script>
-        $('#booklist').hide();
-        $('#bookread').hide();
-        ShelterInit();
+        //各个项目栏
+        projects.LOADING = $('#loading');
+        projects.BOOKLIST = $('#booklist');
+        projects.BOOKREAD = $('#bookread');
+
+        ShelterInit();  //书架初始化
     </script>
 </body>
 </html>
