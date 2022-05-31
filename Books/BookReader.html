@@ -31,8 +31,11 @@
         <button type="button" onclick="TESTBOXESSWITCH();" class="testswitch">开启调试平台</button>
         <div class="testboxes">
             <input type="text" class="inputbox" name="inputbox"><br>
-            <button type="button" onclick="RunAct();" class="run">Run!</button><br>
-            <textarea class="outputbox"></textarea>
+            <button type="button" onclick="RunAct();" class="run">Run!</button> &nbsp;
+            <button type="button" onclick="BackStep();" class="backstep">上一条</button> &nbsp;
+            <button type="button" onclick="NextStep();" class="nextstep">下一条</button> &nbsp;
+            <br>
+            <textarea class="outputbox">></textarea>
         </div>
     </div>  
     <script>
