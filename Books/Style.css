@@ -1,0 +1,7 @@
+input.inputbox, textarea.outputbox {
+    border-style: solid;
+    border-color:rgb(0, 0, 0);
+    height: 200px;
+    width: 300px;
+}
+
