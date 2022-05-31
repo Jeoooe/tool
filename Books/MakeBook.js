@@ -3,6 +3,8 @@ var curChapter = 0; //章节数 - 1
 var books = [];
 var GoToLock = false;    //进程锁
 var curBook = '';	 //当前书目
+var projects = {};
+//数组除空
 var RmvEmp = (arr) => {
 	for(let i = 0; i < arr.length; i++) {
 		if(arr[i] == undefined) {
@@ -12,6 +14,24 @@ var RmvEmp = (arr) => {
     }
 	return arr;
 }
+
+//LOADING界面
+function ShowLoad() {
+    for(let key in projects) {
+        projects[key].hide();
+    }
+    if (projects.hasOwnProperty('LOADING'))
+        projects.LOADING.show();
+}
+
+//切换别的界面
+function HideLoad(element) {
+    for(let key in projects) {
+        projects[key].hide();
+    }
+    element.show();
+}
+
 
 //分割章节
 function Split(str) {
@@ -31,15 +51,12 @@ function SetTxt(str) {
 
 //阅读页面初始化
 function BookReadInit() {
-	$('#booklist').hide();
-    $('#loading').show();
     for (let i = 1;i <= txt.length;i++) {
         txt[i - 1] = `第${i}章` + txt[i - 1];
     }
     $('[name=cptsum]').text(`共${txt.length}章`);
     GoToChapter(0);
-	$('#loading').hide();
-    $('#bookread').show();
+	HideLoad(projects.BOOKREAD);
 };
 
 //跳转按钮 onclick
@@ -54,8 +71,9 @@ function UpdateChapter() {
 function GoToChapter(index) {
     if (index < 0 || index > txt.length) return 1;
     if (txt[index]) {
+        $('#content').html('Loading');  //先变成loading防止误会
         $('#content').html(txt[index].split('\n').join('<br>'));
-        curChapter = index;
+        curChapter = index; //更新当前章节数
         return 1;
     }
     else return 0;
@@ -63,14 +81,12 @@ function GoToChapter(index) {
 
 //上一章
 function BackChapter() {
-    curChapter--;
-    if (GoToChapter(curChapter) == 0) BackChapter();
+    if (GoToChapter(curChapter - 1) == 0) BackChapter();
 }
 
 //下一章
 function NextChapter() {
-    curChapter++;
-    if (GoToChapter(curChapter) == 0) NextChapter();
+    if (GoToChapter(curChapter + 1) == 0) NextChapter();
 }
 
 //Get请求
@@ -83,6 +99,7 @@ function Get(urlName,func) {
 function GoToBook(bookname) {
     if (GoToLock) return;   //防止多次加载
 	GoToLock = true;    //锁
+    ShowLoad(); //LOADING
 	if (curBook !== bookname) {	//不重复进入
 		curBook = bookname;
         urlname = bookname + '.txt';
@@ -117,16 +134,15 @@ function UpdateList(data) {
         form.append(btn);
         form.append("<br><br>")
     })
-    $('#booklist').show();
-    $('#loading').hide();
+    HideLoad(projects.BOOKLIST);
 }
 
 //书架初始化
 function ShelterInit() {
+    ShowLoad();
     //已加载的情况
     if (books.length !== 0) {
-        $('#loading').hide();
-        $('#booklist').show();
+        HideLoad(projects.BOOKLIST);
     }
     //未加载
     else Get('BookList.json',UpdateList);
@@ -135,7 +151,6 @@ function ShelterInit() {
 //返回目录
 function BackToList() {
     //txt = ''; 
-    $('#bookread').hide();
-    $('#loading').show();
+    ShowLoad();
     ShelterInit();
 }
