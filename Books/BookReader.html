@@ -3,7 +3,7 @@
 <head>
     <title>BookReader</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="Style.css">
     <script src="jquery-3.5.1.min.js"></script>
     <script src="MakeBook.js"></script>
     <script src="TestWnd.js"></script>
@@ -28,15 +28,12 @@
     </div>
     <br><br><br>
     <div id="testwnd" >
-        <button type="button" onclick="" class="testswitch">开启调试平台</button>
-        <table>
-            <tr>
-                <input type="text" class="inputbox">
-            </tr>
-            <tr>
-                <textarea class="outputbox">></textarea>
-            </tr>
-        </table>
+        <button type="button" onclick="TESTBOXESSWITCH();" class="testswitch">开启调试平台</button>
+        <div class="testboxes">
+            <input type="text" class="inputbox" name="inputbox"><br>
+            <button type="button" onclick="RunAct();" class="run">Run!</button><br>
+            <textarea class="outputbox"></textarea>
+        </div>
     </div>  
     <script>
         //各个项目栏
@@ -44,6 +41,7 @@
         projects.BOOKLIST = $('#booklist');
         projects.BOOKREAD = $('#bookread');
 
+        TESTBOXES_INIT();
         ShelterInit();  //书架初始化
     </script>
 </body>
