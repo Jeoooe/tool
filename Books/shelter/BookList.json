@@ -8,17 +8,25 @@
             "name":"夜的命名术",
             "urlname":"ydmms"
         },
-	{
+	    {
             "name":"斗罗2绝世唐门",
             "urlname":"dl2"
         },
-	{
+	    {
             "name":"斗罗3龙王传说",
             "urlname":"dl3"
         },
-	{
+	    {
             "name":"斗罗4终极斗罗",
             "urlname":"dl4"
+        },
+        {
+            "name":"诡秘之主",
+            "urlname":"gmzz"
+        },
+        {
+            "name":"诡秘之主：午夜提灯",
+            "urlname":"gmzz_wytd"
         }
     ]
 }
