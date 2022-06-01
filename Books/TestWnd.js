@@ -49,7 +49,7 @@ var CMD_LIST = {
 var TESTBOXES_INIT = () => {
     TESTBOXES = $('div.testboxes');
     runBtn = $('button.run');
-    inputBox = $('input.inputbox');
+    inputBox = $('textarea.inputbox');
     outputBox = $('textarea.outputbox');
     TESTBOXES.hide();
 }
@@ -64,14 +64,17 @@ var TESTBOXESSWITCH = () => {
     }
 }
 
+//获得输入框内容
 var GetInput = () => {
     return inputBox.val();
 }
 
+//设置输入框内容
 var SetInput = (str) => {
     if (typeof str === 'string') inputBox.val(str);
 }
 
+//清除输入框
 var ClsInput = () => {
     SetInput('');
 }
