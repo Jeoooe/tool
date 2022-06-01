@@ -1,1 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="jquery-3.5.1.min.js"></script>
+    <style type="text/css">
+        button {
+            width: 30px;
+            height: 30px;
+        }
+        button.up {
+            position: relative;
+            left:35px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gamecanvas" width="600" height="400" style="border-style: solid;
+    border-color:rgb(42, 38, 58);">
+    </canvas>
+    <div id="controllers">
+        <button type="button" class="up">↑</button><br>
+        <button type="button" class="left" >←</button>
+        <button type="button" class="dowm" >↓</button>
+        <button type="button" class="right">→</button>
+    </div>
 
+    <script>
+        // 60 * 40
+        var width = 60; //长
+        var height = 40;    //高
+        
+        var snake = [[10,13],[10,12],[10,11],[10,10]];  //[0] = head
+        var food = [];
+        var snakeLen = 4;
+        var snakeDir = 'right';
+        var canvas = document.getElementById("gamecanvas").getContext('2d');
+        var isEnd = false;
+        var curTail = [0,0];
+        var loopID = 0;
+
+        var GetDir = () => {
+            switch (snakeDir) {
+                case 'right': return [0,1];
+                case 'left': return [0,-1];
+                case 'up': return [1,0];
+                case 'down': return [-1,0];
+                default: return [0,0];
+            }
+        }
+        var Rand = (n,m) => {return Math.floor(Math.random() * (m - n)) + n;} //随机数[n,m)
+        
+
+
+        function Draw(y, x, color) {
+            /*
+            if (color == 'black') canvas.fillStyle = '#000000';
+            else if (color == 'white') canvas.fillStyle = '#FFFFFF';
+            */
+            canvas.fillStyle = color;
+            canvas.fillRect(x * 10,y * 10,10,10)
+            console.log(`Draw:${color}`);
+        }
+
+        function SnakeMove() {
+            curTail = snake[snake.length - 1];
+            let dir = GetDir();
+            for (let i = snake.length - 1;i > 0;i--) {
+                snake[i] = snake[i - 1];
+            }
+            snake[0][0] += dir[0];
+            snake[0][1] += dir[1];
+
+            //渲染
+            Draw(curTail[0],curTail[1],'white');
+            Draw(snake[0][0],snake[0][1],'black');
+
+            //渲染 end
+
+            if (snake[0][0] <= 0 ||snake[0][1] <= 0 || snake[0][0] > height || snake[0][1] > width) {
+                isEnd = true;
+            }
+        }
+
+        function EatFood() {
+            if (snake[0][0] === food[0] && snake[0][1] === food[1]) {
+                snake.push(curTail);
+                Draw(curTail[0],curTail[1],'black');
+                Draw(food[0],food[1],'white');
+                food[0] = Rand(1,height);
+                food[1] = Rand(1,width);
+                Draw(food[0],food[1],'black');
+                console.log('eat!')
+            }
+        }
+
+        function StopGame() {
+            clearInterval(loopID);
+        }
+
+        function InitGame() {
+            food[0] = Rand(1,height);
+            food[1] = Rand(1,width);
+            Draw(food[0],food[1],'black');
+            for (let i = 0;i < snake.length;i++) {
+                Draw(snake[i][0],snake[i][1],'black');
+            }
+        }
+
+        function LoopGame() {
+            SnakeMove();
+            EatFood();
+            if (isEnd) StopGame();
+        }
+
+        InitGame();
+        loopID = setInterval(LoopGame,500); //500ms
+    </script>
+</body>
+</html>
