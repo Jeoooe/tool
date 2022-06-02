@@ -11,6 +11,12 @@
             position: relative;
             left:35px;
         }
+        button.runninggame {
+            width: 150px;
+        }
+        button.speedupd {
+            width: 50px;
+        }
     </style>
 </head>
 <body>
@@ -18,16 +24,26 @@
     border-color:rgb(42, 38, 58);">
     </canvas>
     <div id="controllers">
-        <button type="button" class="up">↑</button><br>
-        <button type="button" class="left" >←</button>
-        <button type="button" class="dowm" >↓</button>
-        <button type="button" class="right">→</button>
+        <button type="button" class="up" onclick="SnakeTurn('up');">↑</button><br>
+        <button type="button" class="left" onclick="SnakeTurn('left');">←</button>
+        <button type="button" class="dowm" onclick="SnakeTurn('down');">↓</button>
+        <button type="button" class="right" onclick="SnakeTurn('right');">→</button>
+        <p class="score">分数：</p>
+        <button type="button" class="runninggame" onclick="StopGame();">暂停游戏</button>
+        <button type="button" class="runninggame" onclick="ContinueGame();">继续游戏</button>
+        <button type="button" class="runninggame" onclick="StartGame();">重新游戏</button>
+        <p> 速度调整：(每秒更新几次)&nbsp;
+            <input type="text" class="speedupd" value="15"> 
+            <button type="button" class="speedupd" onclick="UpdateSpeed();">调整</button>
+        </p>
     </div>
 
     <script>
         // 60 * 40
         var width = 60; //长
         var height = 40;    //高
+        var gameDelay = 1000 / 15;
+        var speedUpdBox = $('input.speedupd');
         
         var snake = [[10,13],[10,12],[10,11],[10,10]];  //[0] = head
         var food = [];
@@ -35,21 +51,50 @@
         var snakeDir = 'right';
         var canvas = document.getElementById("gamecanvas").getContext('2d');
         var isEnd = false;
+        var isStop = false;
         var curTail = [0,0];
         var loopID = 0;
+        var score = 0;
+        var scoreBox = $('p.score');
 
         var GetDir = () => {
             switch (snakeDir) {
                 case 'right': return [0,1];
                 case 'left': return [0,-1];
-                case 'up': return [1,0];
-                case 'down': return [-1,0];
+                case 'up': return [-1,0];
+                case 'down': return [1,0];
                 default: return [0,0];
             }
         }
-        var Rand = (n,m) => {return Math.floor(Math.random() * (m - n)) + n;} //随机数[n,m)
+        var Rand = (n,m) => {return Math.floor(Math.random() * (m - n)) + n;} //随机数[n,m),整数
+        var ResetFood = () =>{food = [Rand(1,height - 1),Rand(1,width - 1)];}   //重置食物位置
         
+        //刷新游戏速度
+        function UpdateSpeed() {
+            let str = speedUpdBox.val();
+            let value = parseInt(str);
+            //来点骚的
 
+            //n+ : random(n,101)
+            if (/[0-9]\+/.test(str)) {
+                value = Rand(value,101);
+            }
+            //n-m: random(n,m + 1)
+            if (/[0-9]-[0-9]/.test(str)) {
+                let l = str.split('-');
+                let a = str[0], b = [1];
+                value = Rand(a,b + 1);
+            }
+            //value : 1-100
+            if (value <= 0 || value > 100) value=100;
+            gameDelay = 1000 / value;
+            StartGame();
+        }
+
+        //蛇转向：button event
+        function SnakeTurn(dir) {
+            snakeDir = dir;     //不安全，但是有什么关系呢？
+        }
 
         function Draw(y, x, color) {
             /*
@@ -63,7 +108,6 @@
 
         function SnakeMove() {
             let dir = [0,0];
-            console.log(`Snake:${snake}`);
             curTail = snake[snake.length - 1];
             dir = GetDir();
             snake.unshift([snake[0][0]+dir[0],snake[0][1]+dir[1]]); //头部插入
@@ -75,13 +119,13 @@
             //渲染 end
 
             //边界
-            if (snake[0][0] <= 0 ||snake[0][1] <= 0 || snake[0][0] > height || snake[0][1] > width) {
+            if (snake[0][0] <= 0 ||snake[0][1] <= 0 || snake[0][0] >= height || snake[0][1] >= width) {
                 isEnd = true;
             }
             //撞自己
-            if (snake.slice(1).toString().includes(snake[0][0].toString())) {
+            if (snake.slice(1).toString().includes(snake[0].toString())) {
                 isEnd = true;
-                console.log('sb');
+                //console.log('sb');
             }
         }
 
@@ -89,35 +133,69 @@
             if (snake[0][0] === food[0] && snake[0][1] === food[1]) {
                 snake.push(curTail);
                 Draw(curTail[0],curTail[1],'black');
-                Draw(food[0],food[1],'white');
-                food[0] = Rand(1,height);
-                food[1] = Rand(1,width);
                 Draw(food[0],food[1],'black');
-                console.log('eat!')
+                ResetFood();
+                Draw(food[0],food[1],'red');
+                snakeLen ++;
+                //console.log(`eat! Pos:${food}`);
+                //吃一次加50分
+                score += 50;
             }
         }
 
         function StopGame() {
             clearInterval(loopID);
+            isStop = true;
+            loopID = 0;
+        }
+
+        function ContinueGame() {
+            if (! isEnd && isStop) {
+                loopID = setInterval(LoopGame,gameDelay);
+                isStop = false;
+            }
         }
 
         function InitGame() {
-            food[0] = Rand(1,height);
-            food[1] = Rand(1,width);
-            Draw(food[0],food[1],'black');
+            canvas.fillStyle = 'white';
+            canvas.fillRect(0,0,width * 10,height * 10);
+            ResetFood();
+            Draw(food[0],food[1],'red');
             for (let i = 0;i < snake.length;i++) {
                 Draw(snake[i][0],snake[i][1],'black');
             }
         }
 
+        //成绩更新
+        function ScoreUpdate() {
+            score += 1;
+            scoreBox.text(`分数:${Math.floor(score)}`);
+        }
+
+        //游戏运行循环
         function LoopGame() {
             SnakeMove();
             EatFood();
+            ScoreUpdate();
             if (isEnd) StopGame();
         }
 
-        InitGame();
-        loopID = setInterval(LoopGame,500); //500ms
+        function StartGame() {
+            score = 0;
+            scoreBox.text('分数:0');
+            if(loopID !== 0) StopGame();
+            snake = [[10,13],[10,12],[10,11],[10,10]];  //[0] = head
+            food = [];
+            snakeLen = 4;
+            snakeDir = 'right';
+            isEnd = false;
+            isStop = false;
+            curTail = [0,0];
+            InitGame();
+            loopID = setInterval(LoopGame,gameDelay); //500ms
+        }
+        
+        StartGame();
     </script>
 </body>
 </html>
