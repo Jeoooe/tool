@@ -57,27 +57,31 @@
             else if (color == 'white') canvas.fillStyle = '#FFFFFF';
             */
             canvas.fillStyle = color;
-            canvas.fillRect(x * 10,y * 10,10,10)
-            console.log(`Draw:${color}`);
+            canvas.fillRect(x * 10,y * 10,10,10);
+            //console.log(`Pos:${[y,x]} Draw:${color}`);
         }
 
         function SnakeMove() {
+            let dir = [0,0];
+            console.log(`Snake:${snake}`);
             curTail = snake[snake.length - 1];
-            let dir = GetDir();
-            for (let i = snake.length - 1;i > 0;i--) {
-                snake[i] = snake[i - 1];
-            }
-            snake[0][0] += dir[0];
-            snake[0][1] += dir[1];
+            dir = GetDir();
+            snake.unshift([snake[0][0]+dir[0],snake[0][1]+dir[1]]); //头部插入
+            snake.pop();                                            //删除尾部
 
             //渲染
             Draw(curTail[0],curTail[1],'white');
             Draw(snake[0][0],snake[0][1],'black');
-
             //渲染 end
 
+            //边界
             if (snake[0][0] <= 0 ||snake[0][1] <= 0 || snake[0][0] > height || snake[0][1] > width) {
                 isEnd = true;
+            }
+            //撞自己
+            if (snake.slice(1).toString().includes(snake[0][0].toString())) {
+                isEnd = true;
+                console.log('sb');
             }
         }
 
