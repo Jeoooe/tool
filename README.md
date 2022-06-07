@@ -8,4 +8,5 @@
   + 加入调试功能（来网页写代码吧——
 + 打游戏（简单）
   + [贪吃蛇](http://jeoooe.github.io/tool/Games/Snake.html)
+  + [扫雷](http://jeoooe.github.io/tool/Games/saolei.html)
   + BasicRPG(开发中)(努力完成吧)
