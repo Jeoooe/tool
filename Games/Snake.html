@@ -4,12 +4,9 @@
     <script src="jquery-3.5.1.min.js"></script>
     <style type="text/css">
         button {
-            width: 30px;
-            height: 30px;
-        }
-        button.up {
-            position: relative;
-            left:35px;
+            width: 50px;
+            height: 50px;
+            margin: 5px;
         }
         button.runninggame {
             width: 150px;
@@ -17,13 +14,23 @@
         button.speedupd {
             width: 50px;
         }
+        .none {
+            opacity: 0;
+        }
+        #gamepad , #controllers{
+            position:relative;
+            left: 30%;
+        }
     </style>
 </head>
 <body>
-    <canvas id="gamecanvas" width="600" height="400" style="border-style: solid;
+    <div id="gamepad">
+        <canvas id="gamecanvas" width="600" height="400" style="border-style: solid;
     border-color:rgb(42, 38, 58);">
     </canvas>
+    </div>
     <div id="controllers">
+        <button class="none" >↑</button>
         <button type="button" class="up" onclick="SnakeTurn('up');">↑</button><br>
         <button type="button" class="left" onclick="SnakeTurn('left');">←</button>
         <button type="button" class="dowm" onclick="SnakeTurn('down');">↓</button>
