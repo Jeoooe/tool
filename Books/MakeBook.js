@@ -35,7 +35,7 @@ function HideLoad(element) {
 
 //分割章节
 function Split(str) {
-    let tmp = str.split(/\s第.*?章[\s：]/);	//分章
+    let tmp = str.split(/\s第.*?[章话卷][\s：]/);	//分章
     //while !(tmp[0]) tmp.shift();
 	tmp = RmvEmp(tmp);
     return tmp;
