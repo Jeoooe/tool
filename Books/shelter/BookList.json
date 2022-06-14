@@ -39,6 +39,22 @@
         {
             "name":"吞噬星空",
             "urlname":"tsxk"
+        },
+        {
+            "name":"冰火魔厨",
+            "urlname":"bhmc"
+        },
+        {
+            "name":"斗罗大陆外传神界传说",
+            "urlname":"dldlwzsjcs"
+        },
+        {
+            "name":"斗罗大陆外传史莱克天团",
+            "urlname":"dldlwzslktt"
+        },
+        {
+            "name":"唐门英雄传",
+            "urlname":"tmyxz"
         }
     ]
 }
