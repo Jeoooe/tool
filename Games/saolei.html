@@ -4,6 +4,7 @@
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <title>扫雷</title>
+<script src="jquery-3.5.1.min.js"> </script>
 <style>
     html, body{
         margin: 0;
@@ -341,17 +342,18 @@
 
             // 失败
             fail (){
-                let bool = confirm('踩到雷，失败了！')
-                if(bool){
-                    window.location.reload()
-                }
+                //let bool = confirm('踩到雷，失败了！')
+                $('.main').append($('<p>踩雷了,失败了</p>'))
+                setTimeout(() => {window.location.reload()}, 5000)
+                    
             }
 
             // 成功
             victory (){
-                alert('成功了！成功了！带成功！')
+                //alert('成功了！成功了！带成功！')
+                $('.main').append($('<p>成功了！成功了！带成功！</p>'))
                 clearInterval(this.timer)
-                alert('你的生命减少了 ' + document.querySelector('#time').innerText + ' 秒')
+                //alert('你的生命减少了 ' + document.querySelector('#time').innerText + ' 秒')
             }
 
             // 右键事件
