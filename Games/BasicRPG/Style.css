@@ -1,0 +1,47 @@
+div.wnd {
+	position: absolute;
+	border-style: solid;
+	border-color: gray;
+	border-width: 1px;
+}
+
+button {
+	margin: 3px;
+	padding-top: 8px;
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-bottom: 8px;
+}
+
+button#outwildarea {
+	position:absolute;
+	top:355;
+}
+
+div#attributespad {
+	left: 10px;
+	top: 10px;
+	width:300px;
+	height:400px;
+}
+
+div#message {
+	left:10px;
+	top:420px;
+	width:300px;
+	height:200px;
+}
+
+div#worldsel {
+	top: 10px;
+	left: 320px;
+	width: 350px;
+	height: 400px;
+}
+
+textarea#msgwindow {
+	position: relative;
+	top:0px;
+	width:300px;
+	height:200px;
+}
