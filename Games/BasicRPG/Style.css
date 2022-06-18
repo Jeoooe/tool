@@ -20,20 +20,20 @@ button#outwildarea {
 
 div#attributespad {
 	left: 10px;
-	top: 10px;
+	top: 30px;
 	width:300px;
 	height:400px;
 }
 
 div#message {
 	left:10px;
-	top:420px;
+	top:440px;
 	width:300px;
 	height:200px;
 }
 
 div#worldsel {
-	top: 10px;
+	top: 30px;
 	left: 320px;
 	width: 350px;
 	height: 400px;
