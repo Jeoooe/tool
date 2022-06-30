@@ -63,6 +63,10 @@
 		{
 			"name":"牧龙师",
 			"urlname":"mls"
+		},
+		{
+			"name":"寄法",
+			"urlname":"jf"
 		}
     ]
 }
