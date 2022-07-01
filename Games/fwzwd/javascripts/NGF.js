@@ -25,7 +25,7 @@ $(function() {
     /*
      *  前期自动化
      */
-
+    try {
     (function() {
         let cheatBtn = $('<td><div><button id="cheatbtn" class="storebtn" style="width: 200px; height: 55px; font-size:160%;">CHEAT</button></div></td>');
         cheatBtn.click(function() {
@@ -73,20 +73,92 @@ $(function() {
         
         table.append(cheatBtn);
     })();
+    }
+    catch (e) {
+        console.log('前期自动化 失败');
+    }
 
 
     /*
      *  更改存档读取为非弹窗读取
      */
+    try {
     (function() {
         //增加存档读取栏   
         let inputBox = $('<td><div><input type="text" id="saveinputbox"></div></td>');
         table.append(inputBox);
         
     })();
+    }
+    catch (e) {
+        console.log('存档读取 失败');
+    }
 
 
-    
+    /*
+     *  代码行
+     */
+    try{
+    (function() {
+        let wnd = $('<div id="cmdwnd"></div>');
+        let wbtn = $('<button id="wbtn">CMD</button>');
+        let inputBox = $('<input type="text" id="cmdinput">');
+        let outputBox = $('<textarea id="cmdoutput" rows="5" cols="40" class="ngfcmd"> </textarea>');
+        let dobtn = $('<button id="docmd" class="ngfcmd" >DO</button>');
+
+        let isCMD = false;
+
+        inputBox.hide();
+        outputBox.hide();
+        dobtn.hide();
+
+        
+        wbtn.click(function() {
+            if (isCMD) {
+                inputBox.hide();
+                outputBox.hide();
+                dobtn.hide();
+            }
+            else {
+                inputBox.show();
+                outputBox.show();
+                dobtn.show();
+            }
+            isCMD = ! isCMD;
+        })
+        
+        //运行
+        dobtn.click(function() {
+            let cmd = inputBox.val();
+            try {
+                let out = eval(cmd);
+                outputBox.text(`${outputBox.text()}\n${out}`);
+            }
+            catch (err) {
+                outputBox.text(`${outputBox.text()}\n${err}`);
+            }
+            finally {
+                inputBox.val('');
+            }
+        })
+
+
+        wnd.append(dobtn);
+        wnd.append($('<br>'));
+        wnd.append(inputBox);
+        wnd.append($('<br>'));
+        wnd.append(outputBox);
+        wnd.append($('<br>'));
+        wnd.append(wbtn);
+
+
+
+        $('body').append(wnd);
+    })();
+    }
+    catch(e) {
+        console.log('代码 失败');
+    }
 
 
     //加载成功
