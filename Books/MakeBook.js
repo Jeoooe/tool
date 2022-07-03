@@ -92,7 +92,7 @@ function NextChapter() {
 //Get请求
 function Get(urlName,func) {
     //使用资源仓库
-    $.get(`https://raw.githubusercontent.com/jeoooe/tool/main/Books/shelter/${urlName}`,func);
+    $.get(`/tool/Books/shelter/${urlName}`,func);
 }
 
 //书本跳转
