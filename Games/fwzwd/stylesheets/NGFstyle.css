@@ -1,0 +1,16 @@
+div#cmdwnd{
+    position: fixed;
+    right:5px;
+    bottom:80px;
+}
+
+.ngfcmd {
+    z-index: 1000;
+}
+
+div#strategywnd {
+	position: fixed;
+	left:5px;
+	bottom: 80px;
+}
+

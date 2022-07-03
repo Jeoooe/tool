@@ -1,0 +1,221 @@
+"Antimatter Dimensions is available at http://ivark.github.io/ .
+!!PREFACE!!
+This guide is about getting through Antimatter Dimensions as fast as possible. Obviously in incremental games you will always eventually get what you want, but there are fast and slow ways. To this end, here are some things you should do as much as possible:
+Get an Autoclicker. The one I use is AutoHotKey ( https://autohotkey.com/ ) running this script: https://www.dropbox.com/s/3tlqzgoaiv7xrbq/F3%20to%20spam%20left%20click.ahk?dl=0 . It works like this: Hit F3 and left clicks are sent at a rate of 50Hz. Hit F4 and the autoclicker stops. It can be edited like a text file, so feel free to change the hotkeys used/behaviour as you please. Use THE M TRICK: Hold down M. After an initial delay, key repeat will start and you will spam the 'Buy max' button faster than even an Autoclicker can! (The rate is controlled by 'Key repeat' in Control panel.)
+
+Run Antimatter Dimensions in Chrome, no other browser. On Firefox the enter trick and autoclicker don't work as well. Leave it as the active tab in its own window, un-minimized (hidden is ok). If it is considered inactive it will not get as much CPU time and run inefficiently. (Turning off the News in options will also help CPU usage. Note that if your computer has very low specs, you will find it difficult to achieve challenge times and fastest infinity times reported in the guide.)
+
+Export your saves regularly and save them to a text file in some cloud storage (like Dropbox). This way if you need to change computers you can, you can't lose your progress by losing or overriding your save, and if you make a mistake and need to undo it you can load an earlier save.
+Hotkeys: C for Big Crunch, M for Max All, S for Dimensional Sacrifice, D for Dimension Shift/Boost, G for Antimatter Galaxy, Numbers 1-8 for Buy 10 (d1-8), A for Toggle Autobuyers
+Example Autohotkey script for sending M to a window even if it's not active: https://www.reddit.com/r/AntimatterDimensions/comments/73jhqe/patashus_antimatter_dimensions_guide/dqjuc7y/?context=3
+!!PREMISE OF ANTIMATTER DIMENSIONS!!
+The premise of Antimatter Dimensions is that 1st Dimensions produce antimatter (the currency you use to buy things), 2nd Dimensions produce 1st Dimensions, 3rd Dimensions produce 2nd Dimensions and so on. All of the above will happen ~1.124x (1/(1-0.11)) multiplicatively faster by buying Tickspeed increases. Each Dimension will operate 2x multiplicatively faster every time you buy 10 of it.
+Finally, by building up the count of your highest dimension, you can Dimension Shift (unlock a higher dimension, up to 8th Dimension), Dimension Boost (multiply all Dimension multipliers by 2x multiplicatively) and finally Antimatter Galaxy (Tickspeed reduction is increased by 0.1x - 1.12x for 1 galaxy and 1.13x for 2 galaxies, giving production multipliers of ~1.136x and ~1.149x respectively).
+Using these powerful upgrades resets all progress up until that point, leaving you only with the new upgrade - but they are so powerful at the start of the game that is is mandatory to buy all of them.
+One other mechanic is unlocked after the first Dimensional Boost - Dimensional Sacrifice. By destroying all non-8th dimensions, you multiply your 8th Dimension multiplier permanently. While it seems like it erases all your progress so far, the fact that dimension multipliers increase over time, in addition to the new 8th Dimension multiplier, effectively multiplies how fast you can redo all of that progress.
+There is strong offline progression (all dimensions continue to produce lower dimensions and you gain antimatter), however no purchases take place while offline, so offline time usually just gets you to the next boost/galaxy and no further.
+Antimatter Dimensions can be understood with a physics analogy. Antimatter is distance, 1st Dimensions are speed (they increase your antimatter linearly over time), 2nd Dimensions are acceleration (increasing 1st Dimensions linearly over time increases antimatter by t2 over time) and so on. Continuing like this, we could call the dimensions 3 through 8 Jounce, Crackle, Pop, Lock and Drop (using this list: http://www.arj.no/2011/05/04/derivatives/ ). Since every dimension linearly increases the one below it, we can see that Antimatter increases proportional to t8 where t is time elapsed - but it is actually even better than this, since you are then spending your Antimatter increasing dimensional multipliers, buying tickspeed upgrades and so on, which makes your antimatter rise faster than t8. However, at the start of the game it STILL does not rise exponentially over time (at where a is some constant) - you will need the help of powerful upgrades such as Antimatter Galaxies to increase antimatter exponentially, and then even superexponentially.
+Additional formulas can be found here, if you're curious: https://rawgit.com/1234abcdcba4321/IvarK.github.io/master/howto.html
+!!START TO GALAXY 1!!
+Start by activating your Autoclicker (see Preface if you don't have one) and placing it on the 'Max all' button. You will have to turn your Autoclicker off and click other buttons manually for the following reasons, in order of appearance:
+Buying exactly one of the highest dimension available to you. (Otherwise it is useless to buy any less than 10 dimensions at once, because they will be growing so fast from the dimensions above them that only the 2x multiplier for completing a set of 10 matters.)
+
+'Max all' prioritizes the next tickspeed boost (which is 1.11x to all dimensions) over an equally expensive 10 of one dimension (which is 2x to that dimension and usually more powerful). If you don't want this, you'll occasionally buy 10 by hand.
+
+Buying the next Dimensional Shift, Dimensional Boost or Antimatter Galaxy. Doing this resets all your previous progress, but these upgrades are powerful and currently mandatory for progression. Max all does not buy them, so buy them by hand ASAP.
+
+Doing Dimensional Sacrifices. Do the first one at 5x, and every subsequent one at about 2x as long as you are not very close to the next Boost or Galaxy. (The fact that your Dimension multipliers are higher than they used to be means that you'll regain all of your 1st-7th galaxies much faster than you ever could before, so the time spent rebuilding your dimensions from well timed Sacrifices is minimal.)
+Finally you will reach 80 8th Dimensions and buy Antimatter Galaxy 1.
+!!GALAXY 1 TO GALAXY 2 TO INFINITY!!
+At first, things will seem about as slow as when you had 0 Galaxies. However, look at the bonus for tickspeed boost - it's now 12% less instead of 11% less. Each tickspeed boost used to give production multiplier of ~1.124x (1/(1-0.11)), now it's about ~1.136x. Doesn't sound like much, but think about it this way - 1e60 antimatter used to give you an 880x boost - now it gives a 1629x boost. By the time you're back to 80 8th Dimensions (the end of Galaxy 0), you have a 3.5x bigger multiplier from Tickspeed boosts. (Also, your achievements are giving a multipler to all dimensions - IIRC at this point it's 1.5x.)
+When you are about to buy 100 8th Dimensions, stop - buy to exactly 99 8th Dimensions instead, earning achievement 'The 9th dimension is a lie'.
+Continue in this way to 140 8th Dimensions and buy Antimatter Galaxy 2.
+Now the tickspeed boost production multiplier is ~1.149x. By the time you get back to 140 8th Dimensions, you now have a 10.6x bigger multiplier from Tickspeed boosts. Not bad! Now things will start to feel fast. This is because everything you can buy gives a multiplicative boost, and every cost also increases multiplicatively - so both antimatter produced and antimatter cost to buy things are exponential. If your antimatter produced is rising FASTER than the costs are, you have superexponential production and the game gets FASTER, not SLOWER, as your amount of antimatter increases! Not bad, huh? The only thing stopping you from growing forever is that at 1.8e308 antimatter (or 180UCe), which is 100% of the 'Percentage until Infinity' bar growing along the bottom, you hit Infinity. But this is not the end of Antimatter Dimensions.
+Before you reach Infinity (1.8e308 antimatter, or 180UCe, or 100% of the bar that fills along the bottom of the game), make sure to get the following achievements:
+There's no point in doing that... - Buy a single 1st Dimension when you have over 1e150 of them.
+
+The Gods are pleased - Get over 600x from Dimension Sacrifice in total. (To do this, keep doing Dimensional Sacrifices when you're VERY VERY close to Infinity until the achievement popup appears in the top right corner
+When you reach Infinity, hit the 'Big Crunch' button. Things will start over, but with a new 'Infinity' button available.
+!!INFINITY POINT 1 TO INFINITY POINT 9!!
+Click on the 'Infinity' button and buy 'Production increases over time' for 1 IP. (Note: I see people recommend getting 'Multiplier for 10 Dimensions 2x -> 2.2x' instead. However, this is much better. Why? Because the multiplier applies to ALL dimensions RIGHT AWAY. 2x -> 2.2x is only a bigger multiplier for any given dimension after upgrading that dimension about 10 times, whereas 'Production increases over time' is speeding up the slowest part of runs - the starts.)
+Now here is an important way to speed up the early game: Go to the Challenges tab. Until Infinity Point 5-6, it is FASTER to do a Challenge 8 (8th Dimension Autobuyer Challenge) run instead of a normal run. Why? Because Challenge 8 has its own exponential growth system that, right now, is faster than hitting Infinity normally.
+There are two strats for C8 to try, depending on how much you're paying attention:
+Easy strat: Sacrifice at 3.00x or above
+
+Optimal strat: Count how long it takes to reach 1.01x from 1.00x, count twice that time, then sacrifice and repeat
+Your Challenge 8 runs will take about an hour each. If they were normal runs, they'd have taken a few hours each. Once you swap back to normal runs with 5-6IP under your belt, they'll start taking less than an hour each.
+As for the rest of the Challenges and Autobuyers, don't worry about them yet - they will be more useful once you have IP.
+With your upcoming IP, 'Multiplier for 10 dimensions 2x -> 2.2x' then the rest of the first two column Infinity upgrades in any order you please.
+Once you start doing regular Infinities, if you're holding M for them and have 'Decrease the number of dimensions needed for reset by 9', set your 8th Dimension Autobuyer to buy singles. If you're not active, keep it on buy 10. This will speed up runs slightly since it will occasionally buy the #1th 8th dimension needed for the next boost or galaxy.
+During this section you will be able to get the following achievements:
+'How the antitables have turned' - You can get this during the end of a Challenge 8 run. Turn off all Autobuyers, sacrifice, buy 10 of each dimension, and then buy 10s of each dimension at a time until your 8th dimension multiplier is largest, your 7th dimension multiplier is second largest, ETC. It is worth getting this now as it becomes harder later.
+
+I don't believe in Gods - Buy a Galaxy without Sacrificing. At this point in the game sacrificing is still faster than not sacrificing, but go out of your way once to get this achievement.
+
+You didn't need it anyway - Reach Infinite antimatter without having any 8th dimensions. To do this, get 5 IP of upgrades, 2 galaxies and the 185 8th Dimensions dimensional boost, then instead of autoclicking 'Max all', autoclick tickspeed Buy max and the Until 10 for each dimension.
+!!9 IP TO 45 IP!!
+Do not come up with plans like 'I'll save up for infinity upgrade X even though it's more expensive' - the upgrades can only be unlocked in the following order - column 3 top to bottom, then column 4 top to bottom, then 'Multiply infinity points from all sources by 2'.
+So, continue to get IPs as you have been before. By this point it is already faster to go Infinite on one galaxy instead of 2, which speeds things up a lot. The game still feels very 'active' at this point - but hang in there. Things will get better soon.
+Note that when you get the upgrade 'Bonus for unspent Infinity Points on 1st dimension', you should always keep unspent IP on hand, since spending all of it on an upgrade will actually SLOW down your time to infinity. At first this number will be 10, but later it will be 20, 50, 100 and so on. Continue to save and export backups of your game data so that if you make a mistake and slow down your progress by spending too much IP, you can change your mind.
+Finally once you have bought 'Infinity point generation (based on fastest infinity)' and have at least 10 unspent IP, spend some time to get your fastest infinity as fast as possible. Now you earn IP/s 10% as fast as you can earn IP/s by playing actively! Finally you can go offline and come back to a meaningful form of progress. Give yourself a pat on the back because now we're about to go to the most fun part of the game for a while, Challenges.
+!!CHALLENGES!!
+Click on the 'Challenges' button. Finally I will reveal the reason why you wait this long to do Challenges - Because you bring ALL achievements and Infinity upgrades into your Challenge runs, EXCEPT for the 4th column of Infinity upgrades. So we are currently at the point in the game, excluding grinding on-hand IP, where there is no easy way. to speed up challenges any further. Here are the challenges in order from easiest to hardest:
+Automated Galaxies: Trivial. (Normal matter does not rise fast enough to intimidate anyone who has even a few IPs of upgrades, let alone your current state.)
+
+7th Dimensional Autobuyer: Trivial although RNG dependent. (It's possible to get VERY bad rolls on the multipliers and actually LOSE production. However, it's reset every time you shift/boost/galaxy, so if you can't make it to the next one, use the provided 'lose a reset' button to try again.)
+
+3rd Dimension Autobuyer: Trivial. (1st dimension production starts at 1% normal, but your upgrades are so massive at this point it barely registers.)
+
+8th Dimension Autobuyer: Once you boost the first time and unlock Dimensional Sacrifice, keep doing it every time it hits 2x. After a while it will hit 3x super fast, then 5x super fast, then 10x super fast, etc. Essentially this is a superexponential loop, serving the same purpose Galaxy 2 did in your initial run. (If you followed the guide though, this is already complete!))
+
+4th Dimension Autobuyer: You can try turning off autobuyers and spacing out your 'Buy max' clicks, but I found this challenge to finish quite fast even with no specialt actics.
+
+5th Dimension Autobuyer: Pretty much just a slower game with no special tactics. You will probably have to get 2 galaxies to finish this one.
+
+6th Dimension Autobuyer: 'Each dimension costs the dimension 2 before it' means that while 1st and 2nd still cost Antimatter, 3rd costs 1st Dimensions, 4th costs 2nd Dimensions and so on. Except for the fact that buying the 1st of each new dimension is more important than usual (because it immediately kicks off accelerated production of its cost), this is just a slower game.
+
+Automated Dimension Boosts: Slower with no special tactics. You'll probably need 2 galaxies.
+
+Automated Big Crunches: Slower with no special tactics. You'll probably need 2 galaxies.
+
+2nd Dimension Autobuyer: This challenge is quite slow, because production of ALL dimensions goes linearly from 0% to 100% over the course of 180 seconds every time you buy ANYTHING. I found the best strategy was to turn off all autobuyers and only hit 'Buy max' when I could multiply several Dimensions at once.
+Finally, Tickspeed Autobuyer. This is the hardest challenge, and I recommend you make FREQUENT backup saves because it is very easy to screw up - which wouldn't be so bad, except 'Lose a reset' takes you back to the start of the PREVIOUS not CURRENT reset. Do this:
+Turn off all Dimension and tickspeed autobuyers, however keep 8th and 6th autobuyers turned on.
+
+Go to options and change Notation to Scientific.
+Now understand this: Every time you buy 10 of a dimension (or one tickspeed boost), its cost increases by a certain multiple, for example '3' means that it will go from 1e2 to 1e5):
+Tickspeed: 1
+
+1: 3
+
+2: 4
+
+3: 5
+
+4: 6
+
+5: 8
+
+6: 10
+
+7: 12
+
+8: 15
+The challenge is that if you buy 10 of a dimension/tickspeed boost for a certain cost, anything else that had that cost will ALSO increase by the same amount. So imagine that you accidentally made 1st and 8th Dimensions cost the same, then bought 10 1st Dimensions - suddenly your 8th Dimensions will cost 1e15x more, which will likely be too expensive to reach and force a reload.
+Because the penalty for cost increasing a more expensive Dimension is the highest, you should focus on maxing out the highest Dimensions and making sure their costs never line up, while being less careful with lower Dimensions - even if they get as expensive as higher Dimensions, you can just go and upgrade higher Dimensions instead. The lower Dimension will not get so much more expensive that you're screwed, maxing out higher Dimensions is FAR more important. Finally, every so often, buy tickspeed upgrades until it's just cheaper than the cheapest Dimension. To be clear, you do not have to play perfectly to clear this challenge, especially with all of your Infinity upgrades, so long as you do not make any major mistakes.
+._1W1pLIfaIb8rYU6YeTdAk6{margin-right:6px}._1H6Meh6ZAemKxOJDOEasfK{border-radius:50%;box-sizing:border-box;height:20px;margin-left:-8px;width:20px}._1H6Meh6ZAemKxOJDOEasfK:first-child{margin-left:0}._30vlMmCcnqKnXP1t-fzm0e{display:inline-block;margin-left:-8px;position:relative}
+._3wvjcIArtO7kKPJabZfZ9S{font-family:Noto Sans,Arial,sans-serif;font-size:12px;font-weight:400;line-height:16px;-ms-flex-align:center;align-items:center;color:var(--newCommunityTheme-metaText);display:-ms-flexbox;display:flex;margin-right:24px;opacity:0;transition:opacity .1s ease-in-out}._3wvjcIArtO7kKPJabZfZ9S._1c98ixuh4QUWO9ERiFID3p{opacity:1}.RtAsN7UrR7u51W5kaOXvp{display:-ms-flexbox;display:flex;margin-left:4px;margin-right:0}._1JRtpiobR4jYtbw-xx1tPO{border:1px solid var(--newRedditTheme-body);margin-left:-7px;transform:scaleX(-1)}._1JRtpiobR4jYtbw-xx1tPO:nth-child(2){margin-top:4px}
+
+/*# sourceMappingURL=https://www.redditstatic.com/desktop2x/chunkCSS/UsersCountIndicator.25121495b567ea821734_.css.map*/
+The reason why you can leave 8th and 6th Dimension autobuyers on is because 8th should always be bought ASAP, and 6th never has a cost the same as an 8th Dimension. 7th Dimension is always safe, but it can have the same cost as 8th Dimension at e55, e115, e175, e235, and e295.
+If you are still stuck, try this helper script: https://www.reddit.com/r/AntimatterDimensions/comments/76aero/helper_script_for_tickspeed_challenge/
+Once you have cleared Tickspeed Autobuyer, you are done with Challenges (for now!), and have all Autobuyers unlocked. But how do they work?
+By this point, you can unlock the following achievements:
+'How the antitables have turned'. Buy 1 (or 9) of each dimension, then buy 2nd dimensions so its multiplier is barely above 1st, 3rd so it's barely above 2nd, and so on.
+!!UNDERSTANDING AUTOBUYERS!!
+Go to Infinity tab, then to Autobuyers tab. Turn on all your autobuyers. This is a huge jump in complexity compared to the rest of the game - what do all of these buttons, dropdowns and fields do?
+We'll start by looking at the 1st Dimension Autobuyer. By default, it buys 1 1st dimension every 3.0 seconds. If a first dimension can't be afforded when the 3.0 seconds are up, it waits until it can be, and buys a 1st dimension, starting the 3.0 second timer again.
+The first thing we can do is press the 'Buys singles' button. This changes it to 'Buys until 10'. Although there is a small advantage to buying the first copy of each dimension, at this point your starting antimatter AND antimatter growth is so high that you'll be able to buy 10 of each dimension so fast that there is no longer any benefit to using 'Buys singles'.
+There is also a checkbox 'Is active'. If for some reason we only want to buy certain things and not others, we can toggle autobuyers individually this way.
+There is also a dropdown 'Priority'. What is this used for? If you think back to 3 paragraphs ago, we know that it's possible for multiple Autobuyers to be off cooldown, but not able to afford their next purchase yet. If both of those autobuyers want to buy things at the same time, priority is used as a tie break - Auyobuyers with '1' go first, then Autobuyers with '2'... and so on, all the way down to 9. Almost all of the time, you will want to use the default priority (1 for 1st, 2 for 2nd... 8 for 8th, 9 for tickspeed), because when all of your Autobuyer intervals are at 0.10 seconds and you buy a boost/galaxy, the Autobuyers will buy in the order 1st, 2nd, 3rd, 4th, etc. And allow you to reach the 8th dimension instantly. If you had the opposite priority order, first the 8th dimension autobuyer would try to buy but couldn't, then the 7th dimension autobuyer would try to buy and couldn't... and finally the 1st dimension autobuyer would buy a dimension, but the higher autobuyers do not try to buy anything again until some time elapses. (Try it yourself to see how much slower it is!)
+Finally, there is a button that lets you spend IP to reduce the autobuyer interval by 40%, cumulatively, finally reaching 0.1 for 64 IP. 0.1 is the minimum for all Autobuyers, now they will all attempt to buy things simultaneously every 0.1 seconds going from lowest to highest priority.
+Even after you bring a Dimension Autobuyer to 0.1 seconds, it can still be upgraded further. '2x bulk purchase' means that after buying this upgrade, it will try to buy dimensions twice every time it activates. Due to how many of each Dimension you can buy before hitting Infinity, the following bulk buy levels are the maximum that will have any effect:
+bulk buy x128 for 1-2
+
+bulk buy x64 for 3-5
+
+bulk buy x32 for 6-8
+Now let's look at the Tickspeed Autobuyer. You should press 'Buys singles' here to to set it to 'Buys max'. Cool! Once at 0.1 seconds you won't have to touch it until some Challenges later.
+Now let's look at Automatic DimBoosts Autobuyer. It has two fields - 'Max 8ths used on reset', and 'Galaxies required to always Dimboost'. The first field determines how many boosts you buy per Galaxy - 0 for 0 boosts, 11 for 1 boost, 26 for 2 boosts, and so on. You want to set this to the lowest value required to reach Infinity. At this point it is probably 56, but later it can be even lower. The second field says that, once we have this galaxies, IGNORE the value of the first field - buy as many Boosts as possible. Right now, this is useless, but we will come back to it.
+Now let's look at Automatic Galaxies autobuyer. The only field here is the maximum number of galaxies to buy - right now this should be 1.
+Now let's look at the Automatic Big Crunch autobuyer. Right now it has no fields, but we will come back to it.
+Now that we understand how Autobuyers work mechanically, let's continue our grind to higher and higher IPs.
+!!TO 200 IP, THEN TO 1000 IP!!
+From this point on we have choices - we can spend IP speeding up autobuyers, or on buying the 4th column of autobuyers. But first, we should max out our fastest infinity, to maximize the effect of 'Infinity point generation (based on fastest infinity)'.
+Under 'Statistics' > 'Statistics', we can see our fastest infinity time. We want to get this number as low as possible. We will do so using our Autoclicker, Automatic DimBoosts (set to 56 max 8ths or even lower later. Leave the second field at 10 for now), Automatic Galaxies (set to 1) and Automatic Big Crunch.
+As usual, go for a fast infinity by placing your autoclicker on Max all, taking it off to Dimension Shift, Dimension Boost and for Antimatter Galaxy 1. (You can also do Dimensional Sacrifices, but we'll be going so fast that a lot of the time it doesn't even save time.) Your autobuyers for DimBoosts, Galaxies and Big Crunch will save time by sometimes clicking the buttons for you. As you earn IP, spend them either on making these 3 autobuyers faster OR on buying 4th column infinity upgrades, based on which is wasting more of your time (the specific run that it skips, or having to click specific buttons manually), making sure to keep 10 IP on-hand for 'Bonus for unspent Infinity points on 1st Dimension'.
+After a while of doing this, Autobuyers for dimensions and tickspeed will start to get cheap. If you need to take a break, buy them up and you'll only have to turn on your Autoclicker for the ends of runs (from 20 8th Dimensions to Galaxy 1, from 20 8th Dimensions to Big Crunch).
+Continue to do runs until you start with 7th Dimension and the next DimBoost/Galaxy/Big Crunch autobuyer upgrade costs 128 IP. Now save up for 'You start with an 8th dimension and a Galaxy'. Give yourself a pat on the back when you get it. Go to Autobuyers tab and set Automatic Dimboosts > Max 8ths used on reset to 11 - or even to 0 - now your fastest Infinity will suddenly go from 5-6 seconds to 1-2 seconds. And by continuing to save up unspent IP and buying Autobuyer upgrades past this point, you will be able to push it as low as 0.8 seconds.
+Finally you can buy levels of 'Multiply infinity points from all sources by 2'. It starts out costing 100 IP, but costs 10x more with each level, and can be bought as many times as you can afford to. Finally your IP/min rate will be shooting through the roof with all of these benefits combined.
+Now get the following achievements:
+Spreading Cancer: Go to options and change notation to Cancer, wait until you get it, then change it back to Scientific.
+!!BREAK INFINITY!!
+The requirement to Break infinity is to get the Big Crunch autobuyer to 0.10 second interval. This costs 32768 IP, so it should be left until after you have 'Multiply infinity points from all sources by x8', Automated Galaxies/Big Crunch at 0.8 seconds or faster (using your Autoclicker plus Autobuyers your fastest Infinity should be ~0.81 seconds), and all Dimension/Tickspeed Autobuyers at 0.10 interval with sufficient bulk buys.
+And now, the moment you've been waiting for! Infinity > Break Infinity > Break Infinity. Smash that button, and the nature of the game will change - you can now continue PAST 1.8e308 antimatter. The upside? You will earn more IP on Big Crunch the more antimatter you make. The downside? The cost increases of tickspeed upgrades and dimensions starts increasing faster and faster past 1.8e308, meaning you will be effectively stuck around 6 galaxies, and by doing a long run can push to 7 galaxies.
+(The following section was figured out with help from /u/fsjd150 in this thread: https://www.reddit.com/r/AntimatterDimensions/comments/73epow/what_happens_next_after_1e7_ip/ )
+At first this is cool, but then you realize 'there isn't any new content! just bigger numbers, and new more expensive IP upgrades to get'. However, the complexity of the game has just shot up dramatically. To demonstrate what I mean, go to Infinity > Autobuyers and look at Automatic Big Crunch. It now has a field 'Amount of IP to wait until reset'. So, we have different strategies we can explore for farming IP/min as fast as possible:
+Short runs: Automatic Dimboosts set to 0/10, Automatic Galaxies set to 1, Automatic Big Crunch set to how much you make in 0.5-1.5 seconds.
+
+4 galaxy runs: Automatic Dimboosts set to 0/10, Automatic Galaxies set to 4, Automatic Big Crunch set to how much you make in 0.5-1.5 seconds after you hit 4 Galaxies.
+
+5 galaxy runs: Automatic Dimboosts set to 0/10, Automatic Galaxies set to 5, Automatic Big Crunch set to how much you make in 0.5-1.5 seconds after you hit 5 Galaxies.
+
+6 galaxy runs: Automatic Dimboosts set to 0/10, Automatic Galaxies set to 6, Automatic Big Crunch set to how much you make in 0.5-1.5 seconds after you hit 6 Galaxies.
+(By setting Automatic Dimboosts to 0/10, we never do any dimensional boosts, which at this point in the game don't save enough time to be worth it, at least for IP/min grinding.)
+Try each of these strategies. Vary 'Amount of IP to wait until' by +/- 10% at a time, and keep checking Statistics > past infinities to see what the IP/min is of each strategy. When you are using the fastest strategy in the fastest sweetspot (both increasing AND decreasing 'Amount of IP to wait until' lowers your IP/min), you can leave the game running (or Autoclick Max all to go ~1.5-3x faster).
+What strategy is optimal will change both over time (because 'Bonus for unspent Infinity points on 1st Dimension' is increasing), as you buy Autobuyers (if they aren't maxed yet - get to it already!) and as you buy Infinity point upgrades (importantly, remember to double 'Amount of IP to wait until' every time you buy a new level of 'Multiply infinity points from all sources by 2'. As always, remember to keep an increasing chunk of IP unspent to get benefits out of 'Bonus for unspent Infinity points on 1st Dimension'.
+Also, feel free to try The MastaMama Trick: Set the priority of 8th Dimension Autobuyer AND Tickspeed Autobuyer to 1. This is reported to give a 10-20% boost in early post infinity, and to later give no noticable benefit, so undo this trick in later sections.
+Or try The MuteVampire trick: Set the dimension autobuyer priorities to 1/5/6/8/4/7/3/2/2. Like so: https://prnt.sc/gs634b This is supposed to give a 20-30% boost in early post infinity. /u/dhoffryn recommends 1/3/3/3/3/3/3/2/2.
+By the way, continue to upgrade bulk buy amounts for your autobuyers as they get cheap (can afford them with <1min of production). You will see small boosts to your IP/min production for doing this, but not forever, because the superexponential cost increases for dimensions post-infintiy mean that, for example, you won't need to bulk buy more than 64x eighth dimensions for a VERY long time.
+/u/CatIsFluffy 's script to determine the right time to crunch with a given strategy: https://www.reddit.com/r/AntimatterDimensions/comments/73jhqe/patashus_antimatter_dimensions_guide/doggivw/?context=3
+!!1E7 IP, CHALLENGES REVISITED!!
+Once you have 1e7 IP + change, buy 'Multiply infinity points from all sources by 2 -> x32'.
+Once you have another 1e7 IP + change, buy 'Power up all dimensions based on slowest challenge run'. Now it's time for some fun. Remember the challenges? The 4th column of infinity upgrades doesn't work on them... but everything under the 'Break infinity' tab DOES. Now we can do them SUPER fast. In fact, so fast some of them won't even need a single boost or galaxy! So do the following:
+Enable Automatic Dimboosts and set it to 11/6
+
+Disable Automatic Galaxies
+
+Turn on 'Automatically retry challenges' under options
+
+Start the challenge in question, and use the M trick
+The following challenges can be beaten this way: 2nd, 3rd, 4th, 5th, 6th, 7th, 8th, Automated Galaxies
+The following challenges will need 1 galaxy to beat as fast as possible, so enable Automatic Galaxies and set it to max 1 galaxy: Automated Dimension Boosts, Automated Big Crunch
+Lastly that leaves Tickspeed Autobuyer. Use the CounterPoint00 strategy: Turn off galaxies autobuyer. Set dimboost to 0/6 (buys shifts but not boosts) Set 8th dimension to priority 1, 7th to priority 2, all other dimensions to 3. Set tickspeed autobuyer to singles and priority 4. Start the challenge. Count approximately 0.2-0.5 seconds after your autobuyers do the last Dimensional Shift, then hold M. Using this strategy, a time under 2 seconds is possible (I got 1.4!) This should give you a 'Power up all dimensions based on slowest challenge run' multiplier of 2000x or so. (Alternatively try these priorities: 8-1,9 for dimensions 1-8,tickspeed.)
+One last thing - Your Tickspeed Challenge time is now faster than your Big Crunch Challenge time. Go back to the Big Crunch Challenge, except instead of doing 1 galaxy, automate 1 boost and do 1 dimensional sacrifice with good manual timing, otherwise spamming 'Max all', and it will get to the 1.3-1.4 second range.
+At this point, your optimal strategy for grinding IP/min should be a 6 galaxy run - Automatic Dimboosts set to 0/10, Automatic Galaxies set to 6, Automatic Big Crunch set to 6500, and you'll earn 6540 IP every 3.7 seconds, for a staggering 100k IP/min, WITHOUT Autoclicker! (Again, we are not doing any boosts at all - only buying 6 galaxies, waiting ~1-2 seconds, then cashing in all of our IP. Boosts force us to buy every dimension again and wastes too much time for too little benefit at this point in the game.)
+Now get the following achievements:
+Blink of an Eye - Fix infinity, make sure your autobuyers are 1-9 priority and not buying galaxies/boosts, then hold down M. (The M trick is faster than an autoclicker.) If it doesn't work, try all performance tips in Preface.
+
+'How the antitables have turned'. If you missed it the first opportunity, this is the last chance you get for a long time.
+!!1E8 IP AND INFINITY DIMENSIONS!!
+Buy all upgrades that cost 1e7 IP, then all upgrades that cost 2e7 IP - except for 'Generates 5% of your fastest infinity IP/min', which you should only buy when it is VERY cheap.
+Once you have 1e8 IP do not buy anything yet. Instead, do the following:
+Set Dimboost Autobuy to 0/6 (e.g. you start buying boosts in the 6th galaxy on). Set Galaxies Autobuy to 7 (buy 7 galaxies total). Turn off the Big Crunch autobuyer. Let the run continue (doing dimensional sacrifices at appropriate moments). As soon as you can afford it, 'Get 1e1100 antimatter to unlock a new Dimension'. This will open up a new subtab, 'Infinity Dimensions', under Dimensions. Click it. Spent 1e8 IP to buy 1st Infinity Dimension.
+Now set up your autobuyers like this: Dimboost Autobuy 0/8, Automatic Galaxies 7, Automatic Big Crunch wait until 60000ish. You should now have runs like this:
+The infinity 1 infinities ago took 2.40 seconds and gave 6.00e4 IP. 1.50e6 IP/min
+Which is -ten times- as much IP/min as you were making before!
+Do everything in 'Challenges Revisited' again with your new super Infinite Dimension powers. You should be able to get every challenge down to 0.69 seconds or faster, bumping 'Power up all dimensions based on slowest challenge run' up to 4373x!
+Using your explosive IP/min rate, buy 'Multiply infinite points from all sources by 2', 'Tickspeed cost multiplier increase 8x -> 7x' and 'Dimension cost multiplier increase 10x -> 9x' in that order. (Also, NOW you can buy 'Generate 5% of your fastest infinity IP/min' if you desire.)
+Now get the following achievements:
+Zero Deaths - Turn off Dimension Boost/Galaxies autobuyer, turn on all other autobuyers, start challenge 3. (You can do this before you have 1st Infinity Dimension, but it will take ~16 hours of waiting. You can do it even before you break infinity, even as early as just after your first Infinity but it will take ~24 hours.)
+!!1E9 IP!!
+Once you can easily get to galaxy 8 with 0 boosts, something surprising happens - it's now optimal for IP/min grinding to get to galaxy 8 without boosting, max boost in galaxy 8 and then crunch for 2.3e6 IP (automatic dimboosts 0/8, automatic galaxies 8). I had 'multiply infinity points from all sources by 2' for 1e9, and all other upgrades that cost less than 1e9, and I went from 7e6 IP/min (2.69e5 IP in 2.3 seconds) to 7.7e6 IP/min (2.32e6 IP in 17.9 seconds).
+At some point though you're going to have to take the plunge and get 2nd Infinity Dimension. Set Automatic Dimboosts to 0/8, Automatic Galaxies to 10 and disable Automatic Big Crunch. Manually perform dimensional sacrifice every time a boost/galaxy isn't immediately bought, and otherwise wait. After 5-6 hours, you will have 1e1900 antimatter. Spend it, then spend 1e9 IP, to unlock 2nd Infinity Dimension.
+Once you have 2nd Infinity Dimension and the 1e9 'Multiply infinity points from all sources by 2 256x' you should have Automatic DimBoosts on 0/8, Automatic Galaxies on 10 and big crunch for 1.29e7 IP after 23.2 seconds, for 3.34e7 IP/min.
+Now get the following achiemevents:
+End me - Using ID2 and the M trick, you will be able to get most challenge times to 0.3-0.4 seconds. Challenges 6, 9 and 12 will be slightly slower (0.45-0.7 seconds).
+!!1E10 IP!!
+Now buy 5e9 'Option to bulk buy Dimension Boosts' (gives about a 2x boost) then 1e10 'Multiply infinity points from all sources by 2 512x'. The way dimension boost bulk buy works is that it will wait until it can buy that many dimension boosts at once, and then buy them all at once. (Unfortunately you can't tell it to, say, buy the first X boosts at once, then every boost beyond that one at a time.)
+After you have these two upgrades, set your autobuyers up like this: Automatic DimBoosts 0/8/18, Automatic Galaxies 9, Automatic Big Crunch 1.43e7. Now your runs should take 7.2 seconds and earn 1.44e7 IP, for 1.2e8 IP/min.
+Now buy 9.38e9 'Tickspeed cost multiplier increase 5x -> 4x'.
+Now buy 4.69e10 'Tickspeed cost multipler increase 4x -> 3x'. At this point you should hit 1.8e8 IP/min or higher.
+Now buy ID1 level 2 for 1e11. (This is about a 2.5x multiplier.)
+Now do a long run for ID3 (3rd Infinity Dimension), and buy it for 1e10 IP. This takes about 2 hours. (It would have taken 8 hours if you went for it before ID1 level 2, and gives about a 1.5x multiplier, hence the delay.)
+Do Infinity Challenge 1. It will take about 5 minutes and boost IP/min about 1.3x.
+Buy 'Multiply infinity points from all sources by 2 1024x' for 1e11. Now with Boosts 0/8/20, Galaxies 11, Big Crunch 3.55e8 you'll be crunching every 12.4 seconds for about 1.73e9 IP/min.
+!!5E11 IP, INFLATION ERA!!
+Get 'Makes galaxies 50% stronger' for 5e11. This is LITERALLY a 2000x or bigger multiplier. Boosts 0/11/25, Galaxies 13, Big Crunch 3.22e12 and you crunch every 28.9 seconds for 6.68e12/min.
+Buy lots of upgrades and ID levels because everything will be super cheap now.
+Once you have ID1 level 3 and 1e14 IP doubler, use 0/12/28, 14, 3.3e14 to crunch every 32.4 seconds for 6.13e14 IP/min.
+Once you have all ID levels/upgrades costing 1e18 or less, use 0/12/32, 16, 1.8e18 to do 2e18/min crunches.
+Also, go and rebeat every challenge - with 0 boosts and 0 galaxies, you should have every challenge time down to 0.12-0.20 seconds, even without using the M trick or similar! This will put 'Power up all dimensions based on slowest challenge run' at 15075.38x.
+After buying everything that costs 1e22, use 0/14/35, 18, 9.3e21. Crunch every 2:50 for 3.3e21/min.
+1e23? 0/15/35, 19, 5.8e22 (1.8e23/min).
+1e24? 0/17/38, 20, 6.6e24 (8 minute runs for 8e23/min).
+Then there's a 1-2 hour lull while you reach 1e26 IP. Buy upgrades in this order: ID1 (x3.5), ID3 (x2.4), 1e26 IP doubler (x2), 3e26 Dimension cost multiplier increase 5x -> 4x (10x!), ID2, 1e27 IP doubler, 1e28 IP doubler. Crunch at 0/19/46, 23, 2.1e29 for 3.91e28 IP/min.
+Buy 1e29 ID1, 1e29 IP doubler, 1e30 IP doubler, 2e30 Dimension cost multiplier increase 4x -> 3x. At this point your production will start exploding again - you'll jump all the way to 1e35 in minutes. Keep crunching at higher and higher IP, and try runs between 1-10 minutes.
+Finally get 1e45 IP, get ID4 (takes 40-50 minutes at this point), complete first 7 rows of achievements, minimize all challenge times, continue to crunch for more and more IP and buy upgrades, etc.
+Do Infinity Challenge 2. It will take about 2 minutes. Now you have the Dimensional Sacrifice autobuyer and Dimensional Sacrificers are MUCH more powerful. Set the threshold to 100 and crunch at 33 galaxies.
+Part 2 of the guide continues here: https://www.reddit.com/r/AntimatterDimensions/comments/73jhqe/patashus_antimatter_dimensions_guide/dqlq0a2/
+
+"
