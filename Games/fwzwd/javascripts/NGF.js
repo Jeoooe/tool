@@ -183,7 +183,7 @@ $(function() {
 			$.get('/tool/Games/fwzwd/Strategy.txt',(data) => {
 				if (! isLoad) {
 					isLoad = true;
-					txt.text(data);
+					txt.html(data);
 					btn.text('攻略');
 				}
 			});
