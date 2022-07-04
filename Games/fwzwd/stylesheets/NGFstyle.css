@@ -14,3 +14,7 @@ div#strategywnd {
 	bottom: 80px;
 }
 
+p#strategytxt {
+	position: absolute;
+	top:1000px;
+}

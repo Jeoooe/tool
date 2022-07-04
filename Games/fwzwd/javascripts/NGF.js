@@ -177,47 +177,55 @@ $(function() {
 		let isLoad = false;
 		let isStrateging = false;
 		
-		div.append(btn);
-		div.append(txt);
-		
-		NGFWnd.append(div);
 		
         //获得攻略文本
 		function GetStrategy() {
-			$.get('Strategy.txt',(data) => {
+			$.get('/tool/Games/fwzwd/Strategy.txt',(data) => {
 				if (! isLoad) {
 					isLoad = true;
 					txt.text(data);
-					$('button#strategyload').text('攻略');
+					btn.text('攻略');
 				}
 			});
 		}
 		
-		
+		//攻略按钮
 		btn.click(function() {
 			if (! isLoad) {
+				//获得攻略文本
 				GetStrategy();
 			}
 			else {
+				//攻略直接放在游戏底端
 				if (! isStrateging) {
-					let body = $('body').children();
+					//let body = $('body').children();
+					/*
 					for (let i in body) {
 						body[i].style.display = 'none';
 					}
-					$('#NGFwnd').show();
-					$('#strategytxt').show();
+					*/
+					//NGFWnd.show();
+					txt.show();
 					isStrateging =  true;
 				}
 				else {
-					$('#strategytxt').hide();
-					let body = $('body').children();
+					txt.hide();
+					//let body = $('body').children();
+					/*
 					for (let i in body) {
 						body[i].style.display = 'block';
 					}
+					*/
 					isStrateging = false;
 				}
 			}
 		});
+		
+		div.append(btn);
+		//div.append(txt);
+		$('body').append(txt);
+		
+		NGFWnd.append(div);
 		
 	})();
 	}
