@@ -67,6 +67,18 @@
 		{
 			"name":"寄法",
 			"urlname":"jf"
+		},
+		{
+			"name":"全职法师",
+			"urlname":"qzfs"
+		},
+		{
+			"name":"仙武帝尊",
+			"urlname":"xwdz"
+		},
+		{
+			"name":"永恒之门",
+			"urlname":"yhzm"
 		}
     ]
 }
