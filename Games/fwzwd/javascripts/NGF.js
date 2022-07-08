@@ -234,6 +234,8 @@ $(function() {
 	}
 
 
+
+	player.options.eternityconfirm = false;
     //加载成功
     console.log('NGF load successfully');
 });
