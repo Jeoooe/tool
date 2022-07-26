@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE ncx PUBLIC "-//NISO//DTD ncx 2005-1//EN"
+ "http://www.daisy.org/z3986/2005/ncx-2005-1.dtd"><ncx version="2005-1" xmlns="http://www.daisy.org/z3986/2005/ncx/">
+  <head>
+    <meta content="urn:uuid:63adf839-bed4-41a5-9b05-76f5defd5688" name="dtb:uid"/>
+    <meta content="2" name="dtb:depth"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>侦探已经死了。 03</text>
+  </docTitle>
+  <navMap>
+    <navPoint id="navPoint-1" playOrder="1">
+      <navLabel>
+        <text>封面</text>
+      </navLabel>
+      <content src="Text/cover.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-2" playOrder="2">
+      <navLabel>
+        <text>制作信息</text>
+      </navLabel>
+      <content src="Text/message.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-3" playOrder="3">
+      <navLabel>
+        <text>简介</text>
+      </navLabel>
+      <content src="Text/summary.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-4" playOrder="4">
+      <navLabel>
+        <text>彩页</text>
+      </navLabel>
+      <content src="Text/illus1.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-5" playOrder="5">
+      <navLabel>
+        <text>目录</text>
+      </navLabel>
+      <content src="Text/contents.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-6" playOrder="6">
+      <navLabel>
+        <text>【6年前，渚】</text>
+      </navLabel>
+      <content src="Text/Section000.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-7" playOrder="7">
+      <navLabel>
+        <text>【第一章】</text>
+      </navLabel>
+      <content src="Text/Section001.xhtml"/>
+      <navPoint id="navPoint-8" playOrder="8">
+        <navLabel>
+          <text>◆为了和你，再度相见</text>
+        </navLabel>
+        <content src="Text/Section001.xhtml#01-1"/>
+      </navPoint>
+      <navPoint id="navPoint-9" playOrder="9">
+        <navLabel>
+          <text>◆因为你说想让我穿上女仆装</text>
+        </navLabel>
+        <content src="Text/Section001.xhtml#01-2"/>
+      </navPoint>
+      <navPoint id="navPoint-10" playOrder="10">
+        <navLabel>
+          <text>◆世界之敌与十二之盾</text>
+        </navLabel>
+        <content src="Text/Section001.xhtml#01-3"/>
+      </navPoint>
+      <navPoint id="navPoint-11" playOrder="11">
+        <navLabel>
+          <text>◆职业，学生。偶尔，是助手。</text>
+        </navLabel>
+        <content src="Text/Section001.xhtml#01-4"/>
+      </navPoint>
+      <navPoint id="navPoint-12" playOrder="12">
+        <navLabel>
+          <text>◆二人独处的千个夜晚</text>
+        </navLabel>
+        <content src="Text/Section001.xhtml#01-5"/>
+      </navPoint>
+      <navPoint id="navPoint-13" playOrder="13">
+        <navLabel>
+          <text>◆对神发誓，没有○</text>
+        </navLabel>
+        <content src="Text/Section001.xhtml#01-6"/>
+      </navPoint>
+      <navPoint id="navPoint-14" playOrder="14">
+        <navLabel>
+          <text>◆然后巨恶再临</text>
+        </navLabel>
+        <content src="Text/Section001.xhtml#01-7"/>
+      </navPoint>
+      <navPoint id="navPoint-15" playOrder="15">
+        <navLabel>
+          <text>◆无人知晓的那一天的事</text>
+        </navLabel>
+        <content src="Text/Section001.xhtml#01-8"/>
+      </navPoint>
+      <navPoint id="navPoint-16" playOrder="16">
+        <navLabel>
+          <text>◆另一个应该说出的过去</text>
+        </navLabel>
+        <content src="Text/Section001.xhtml#01-9"/>
+      </navPoint>
+      <navPoint id="navPoint-17" playOrder="17">
+        <navLabel>
+          <text>◆就好像是侦探一样</text>
+        </navLabel>
+        <content src="Text/Section001.xhtml#01-10"/>
+      </navPoint>
+      <navPoint id="navPoint-18" playOrder="18">
+        <navLabel>
+          <text>◆就算是女生也憧憬着秘密基地</text>
+        </navLabel>
+        <content src="Text/Section001.xhtml#01-11"/>
+      </navPoint>
+      <navPoint id="navPoint-19" playOrder="19">
+        <navLabel>
+          <text>◆真正的敌人</text>
+        </navLabel>
+        <content src="Text/Section001.xhtml#01-12"/>
+      </navPoint>
+      <navPoint id="navPoint-20" playOrder="20">
+        <navLabel>
+          <text>◆我在最后所呼唤的名字</text>
+        </navLabel>
+        <content src="Text/Section001.xhtml#01-13"/>
+      </navPoint>
+      <navPoint id="navPoint-21" playOrder="21">
+        <navLabel>
+          <text>◆找错与答案</text>
+        </navLabel>
+        <content src="Text/Section001.xhtml#01-14"/>
+      </navPoint>
+      <navPoint id="navPoint-22" playOrder="22">
+        <navLabel>
+          <text>◆怪物已经不复存在</text>
+        </navLabel>
+        <content src="Text/Section001.xhtml#01-15"/>
+      </navPoint>
+      <navPoint id="navPoint-23" playOrder="23">
+        <navLabel>
+          <text>◆随后展开的新事件簿</text>
+        </navLabel>
+        <content src="Text/Section001.xhtml#01-16"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint-24" playOrder="24">
+      <navLabel>
+        <text>【6年前，唯】</text>
+      </navLabel>
+      <content src="Text/Inter-chapter1.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-25" playOrder="25">
+      <navLabel>
+        <text>【第二章】</text>
+      </navLabel>
+      <content src="Text/Section002.xhtml"/>
+      <navPoint id="navPoint-26" playOrder="26">
+        <navLabel>
+          <text>◆哼，你就是我的制作人吗</text>
+        </navLabel>
+        <content src="Text/Section002.xhtml#02-1"/>
+      </navPoint>
+      <navPoint id="navPoint-27" playOrder="27">
+        <navLabel>
+          <text>◆请正确使用日语</text>
+        </navLabel>
+        <content src="Text/Section002.xhtml#02-2"/>
+      </navPoint>
+      <navPoint id="navPoint-28" playOrder="28">
+        <navLabel>
+          <text>◆之后，助手尽情享用了一番</text>
+        </navLabel>
+        <content src="Text/Section002.xhtml#02-3"/>
+      </navPoint>
+      <navPoint id="navPoint-29" playOrder="29">
+        <navLabel>
+          <text>◆这是仅属于你的故事</text>
+        </navLabel>
+        <content src="Text/Section002.xhtml#02-4"/>
+      </navPoint>
+      <navPoint id="navPoint-30" playOrder="30">
+        <navLabel>
+          <text>◆不过是包装偶像的简单应援工作</text>
+        </navLabel>
+        <content src="Text/Section002.xhtml#02-5"/>
+      </navPoint>
+      <navPoint id="navPoint-31" playOrder="31">
+        <navLabel>
+          <text>◆朝这世间的不讲理呐喊</text>
+        </navLabel>
+        <content src="Text/Section002.xhtml#02-6"/>
+      </navPoint>
+      <navPoint id="navPoint-32" playOrder="32">
+        <navLabel>
+          <text>◆女孩子无论何时，都希望能穿上漂亮的裙子</text>
+        </navLabel>
+        <content src="Text/Section002.xhtml#02-7"/>
+      </navPoint>
+      <navPoint id="navPoint-33" playOrder="33">
+        <navLabel>
+          <text>◆就这样，噩梦袭来</text>
+        </navLabel>
+        <content src="Text/Section002.xhtml#02-8"/>
+      </navPoint>
+      <navPoint id="navPoint-34" playOrder="34">
+        <navLabel>
+          <text>◆推理小说与传奇幻想同在</text>
+        </navLabel>
+        <content src="Text/Section002.xhtml#02-9"/>
+      </navPoint>
+      <navPoint id="navPoint-35" playOrder="35">
+        <navLabel>
+          <text>◆原初之种，容器少女</text>
+        </navLabel>
+        <content src="Text/Section002.xhtml#02-10"/>
+      </navPoint>
+      <navPoint id="navPoint-36" playOrder="36">
+        <navLabel>
+          <text>◆世界上最为丑恶的选项</text>
+        </navLabel>
+        <content src="Text/Section002.xhtml#02-11"/>
+      </navPoint>
+      <navPoint id="navPoint-37" playOrder="37">
+        <navLabel>
+          <text>◆活着的我们所能做的事</text>
+        </navLabel>
+        <content src="Text/Section002.xhtml#02-12"/>
+      </navPoint>
+      <navPoint id="navPoint-38" playOrder="38">
+        <navLabel>
+          <text>◆某日的后悔，未来的约定</text>
+        </navLabel>
+        <content src="Text/Section002.xhtml#02-13"/>
+      </navPoint>
+      <navPoint id="navPoint-39" playOrder="39">
+        <navLabel>
+          <text>◆一切在此反转</text>
+        </navLabel>
+        <content src="Text/Section002.xhtml#02-14"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint-40" playOrder="40">
+      <navLabel>
+        <text>【5年前，夏洛特】</text>
+      </navLabel>
+      <content src="Text/Inter-chapter2.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-41" playOrder="41">
+      <navLabel>
+        <text>【第三章】</text>
+      </navLabel>
+      <content src="Text/Section003.xhtml"/>
+      <navPoint id="navPoint-42" playOrder="42">
+        <navLabel>
+          <text>◆昨天的朋友是今天的敌人</text>
+        </navLabel>
+        <content src="Text/Section003.xhtml#03-1"/>
+      </navPoint>
+      <navPoint id="navPoint-43" playOrder="43">
+        <navLabel>
+          <text>◆敌人从一开始就在那里</text>
+        </navLabel>
+        <content src="Text/Section003.xhtml#03-2"/>
+      </navPoint>
+      <navPoint id="navPoint-44" playOrder="44">
+        <navLabel>
+          <text>◆若是你能成为我的助手</text>
+        </navLabel>
+        <content src="Text/Section003.xhtml#03-3"/>
+      </navPoint>
+      <navPoint id="navPoint-45" playOrder="45">
+        <navLabel>
+          <text>◆侦探一直，就在那里</text>
+        </navLabel>
+        <content src="Text/Section003.xhtml#03-4"/>
+      </navPoint>
+      <navPoint id="navPoint-46" playOrder="46">
+        <navLabel>
+          <text>◆所以那份遗志，绝不会消散</text>
+        </navLabel>
+        <content src="Text/Section003.xhtml#03-5"/>
+      </navPoint>
+      <navPoint id="navPoint-47" playOrder="47">
+        <navLabel>
+          <text>◆与世界为敌的金色之剑</text>
+        </navLabel>
+        <content src="Text/Section003.xhtml#03-6"/>
+      </navPoint>
+      <navPoint id="navPoint-48" playOrder="48">
+        <navLabel>
+          <text>◆这就是最后得出的答案</text>
+        </navLabel>
+        <content src="Text/Section003.xhtml#03-7"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint-49" playOrder="49">
+      <navLabel>
+        <text>【终章】</text>
+      </navLabel>
+      <content src="Text/Section004.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-50" playOrder="50">
+      <navLabel>
+        <text>【少女间的密话】</text>
+      </navLabel>
+      <content src="Text/Section005.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-51" playOrder="51">
+      <navLabel>
+        <text>【序章】</text>
+      </navLabel>
+      <content src="Text/Section006.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-52" playOrder="52">
+      <navLabel>
+        <text>初回特典『侦探的暑假』</text>
+      </navLabel>
+      <content src="Text/Section007.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-53" playOrder="53">
+      <navLabel>
+        <text>BW特典『这些就两万么，好便宜啊』</text>
+      </navLabel>
+      <content src="Text/Section008.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-54" playOrder="54">
+      <navLabel>
+        <text>蜜瓜特典『麻烦的她正因为麻烦才显得可爱』</text>
+      </navLabel>
+      <content src="Text/Section009.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-55" playOrder="55">
+      <navLabel>
+        <text>电子版特典『两年前，主角不在的背后』</text>
+      </navLabel>
+      <content src="Text/Section010.xhtml"/>
+    </navPoint>
+    <navPoint id="navPoint-56" playOrder="56">
+      <navLabel>
+        <text>累计15万册纪念特典『最令人感到害羞的称呼』</text>
+      </navLabel>
+      <content src="Text/Section011.xhtml"/>
+    </navPoint>
+  </navMap>
+</ncx>

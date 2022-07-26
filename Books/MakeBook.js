@@ -90,12 +90,26 @@ function NextChapter() {
 }
 
 //Get请求
+/**
+ * 
+ * @param {String} urlName 链接名
+ * @param {function} func 运行函数
+ */
 function Get(urlName,func) {
     //使用资源仓库
-    $.get(`/tool/Books/shelter/${urlName}`,func);
+    //txt文本
+    if (urlName.includes('.txt'))  {
+        //$.get(`../Books/shelter/${urlName}`,func); //本地
+        $.get(`/tool/Books/shelter/${urlName}`,func);   //Github
+    }
 }
 
 //书本跳转
+/**
+ * 
+ * @param {String} bookname 书名(链接名)
+ * @returns 
+ */
 function GoToBook(bookname) {
     if (GoToLock) return;   //防止多次加载
 	GoToLock = true;    //锁
@@ -121,18 +135,33 @@ function GoToBook(bookname) {
 }
 
 //书目更新(string, json)
-function UpdateList(data) {
-    if (typeof data == "string") data = JSON.parse(data);
+function UpdateList() {
+    //if (typeof data == "string") data = JSON.parse(data);
+    data = BookList.data;
     let form = $('form.list');
     books = data.list;
     books.forEach((element) => {
-        btn = document.createElement('button');
-        btn.type = "button"
-        btn.name=element.urlname;
-        btn.onclick = () => {GoToBook(element.urlname)};
-        btn.innerText = element.name;
-        form.append(btn);
-        form.append("<br><br>")
+        //不是跳转链接
+        if (! element.urlname.includes('.xhtml')) {
+            btn = document.createElement('button');
+            btn.className = 'mulu';
+            btn.type = "button";
+            btn.name=element.urlname;
+            btn.onclick = () => {GoToBook(element.urlname)};
+            btn.innerText = element.name;
+            form.append(btn);
+            //form.append("<br><br>")
+        }
+        //是跳转链接
+        else {
+            link = document.createElement('a');
+            link.className = 'mulu';
+            //link.href = `../Books/shelter/${element.urlname}`;    //本地
+            link.href = `/tool/Books/shelter/${element.urlname}`;   //Github
+            link.innerHTML = `<button>${element.name}</button>`;
+            form.append(link);
+            //form.append("<br><br>");
+        }
     })
     HideLoad(projects.BOOKLIST);
 }
@@ -145,7 +174,8 @@ function ShelterInit() {
         HideLoad(projects.BOOKLIST);
     }
     //未加载
-    else Get('BookList.json',UpdateList);
+    //else Get('BookList.json',UpdateList);
+    else UpdateList();
 }
 
 //返回目录

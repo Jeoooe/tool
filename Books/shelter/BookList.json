@@ -83,6 +83,10 @@
 		{
 			"name":"游戏人生",
 			"urlname":"nogamenolife"
-		}
+		},
+        {
+            "name":"侦探已死",
+            "urlname":"ztys/Text/contents.xhtml"
+        }
     ]
 }
