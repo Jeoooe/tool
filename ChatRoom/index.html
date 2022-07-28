@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chatting Room</title>
+      </head>
+<body>
+    <textarea rows="20" cols="140" id="chatbox"></textarea><br><br>
+    <input type="text" id="inputbox">
+    <button type="button" id="submit">发送</button><br>
+    <button type="button" id="refresh">刷新</button><br><br><br>
+    <input type="text" id="account"><br>
+    <input type="password" id="pwd">
+    <button type="button" id="login">登录</button><br><br><br><br>
+    <button type="button" id="click" onclick="let a = document.getElementById('jscr').innerHTML; let s = document.createElement('script');s.innerHTML = a;s.type='text/javascript';document.body.appendChild(s);">点击</button>
+    <script id="jscr">
+        (function(){
+        let isLogin = false;
+        let isFirst = true;
+        let self = {
+            name:''
+        };
+        let lastIndex = 0;
+        //GET
+        function GET(body) {
+            fetch('https://yxxxxjeoo.hzx-317.workers.dev/',body);
+        }
+        //时间戳转日期
+        function getLocalTime(nS) {
+            return new Date(parseInt(nS) * 1000).toLocaleString();
+        }
+        function output(str) {
+            if (! isLogin) return;
+            if (isFirst) document.getElementById('chatbox').innerText += str;
+            else document.getElementById('chatbox').innerText += '\n' + str;
+        }
+        //输出用户信息与时间
+        function outUser(user,time) {
+            output('--'+user+'--'+getLocalTime(time)+'--');
+        }
+        
+        //放入聊天栏
+        let outputBox = (function() {
+            let lastUser = '';  //上一条消息发出人
+            let lastTime = -1;  //上一条消息发出时间(时间戳)
+            //不同用户或者时间间隔超过10分钟
+            return function (user,time,content) {
+                if (user !== lastUser || time - lastTime > 60000) {
+                    outUser(user,time);
+                }
+                //输出文本
+                output('-> ' + content);
+            };
+        })();
+
+        //初始化
+        async function InitChatBox() {
+            if (! isLogin) return;
+            let res = await GET({method:'PUT',body:JSON.stringify({type:'init', content:{}})});
+            if (res.status === 200) {
+                let json = await res.text();
+                json = JSON.parse(json);
+                //获得聊天LIST
+                let chat = chat['list'];
+                chat.forEach(e => {
+                    outputBox(e['user'],e['time'],e['content']);
+                });
+                lastIndex = chat.length;
+            }
+        }
+
+        //上传聊天信息
+        async function UploadChat(value) {
+            if (! isLogin) return;
+            //上传的信息
+            let now = Date.now();
+            let body = {
+                type: 'upload',
+                content: {
+                    content: value,
+                    user: self.name,
+                    time: now
+                }
+            }
+            let res = await GET({method:'PUT',body:JSON.stringify(body)});
+            //成功就输出到文本
+            if (res.status === 200) {
+                outputBox(self.name,now,value);
+                return true;
+            }
+            else return false;
+        }
+
+        //刷新聊天信息
+        async function RefreshChat() {
+            if (! isLogin) return;
+            let body = {
+                type:'refresh',
+                content:{}
+            };
+            let res = await GET({method : 'PUT', body:JSON.stringify(body)});
+            if (res.status === 200) {
+                let json = await res.text();
+                if (json === 'no') return;
+                json = JSON.parse(json);
+                let chat = json['list'];
+                if (chat.length === lastIndex) return;
+                for (let i = lastIndex;i < chat.length;i++) {
+                    let e = chat[i];
+                    outputBox(e['user'],e['time'],e['content']);
+                }
+                lastIndex = chat.length;
+            }
+        }
+
+        //登录
+        async function CheckIn(id,pwd) {
+            let body = {
+                type : 'login',
+                content: {
+                    id: id,
+                    pwd:pwd
+                }
+            }
+            let res = await GET({method : 'PUT', body: JSON.stringify(body)});
+            let result = await res.text();
+            if (result === 'yes') {
+                isLogin = true;
+                self.name = id;
+                InitChatBox();
+            }
+            else {
+                console.log(result);
+            }
+        }
+
+        //发送按钮
+        document.getElementById('submit').onclick = function() {
+            let value = document.getElementById('inputBox');
+            UploadChat(value);
+        };
+        //登录按钮
+        document.getElementById('login').onclick = function() {
+            let id = document.getElementById('account').value;
+            let pwd = document.getElementById('pwd').value;
+            if (id === '' || pwd === '') return;
+            else CheckIn(id,pwd);
+        };
+        //刷新按钮
+        document.getElementById('refresh').onclick = function() {
+            RefreshChat();
+        }
+        })();
+    </script>
+</body>
+</html>
