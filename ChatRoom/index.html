@@ -21,8 +21,9 @@
         };
         let lastIndex = 0;
         //GET
-        function GET(body) {
-            fetch('https://yxxxxjeoo.hzx-317.workers.dev/',body);
+        function GET(option) {
+            option['headers'] = {"Content-Type": "text/plain;charset=UTF-8"};
+            fetch('https://yxxxxjeoo.hzx-317.workers.dev/',option);
         }
         //时间戳转日期
         function getLocalTime(nS) {
