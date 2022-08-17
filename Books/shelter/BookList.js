@@ -90,10 +90,6 @@ data : (JSON.parse(`{
             "urlname":"ztys/Text/contents.xhtml"
         },
         {
-            "name":"侦探已死",
-            "urlname":"ztys/Text/contents.xhtml"
-        },
-        {
             "name":"马克思恩格斯全集",
             "urlname":"maen/maenquan.pdf"
         }

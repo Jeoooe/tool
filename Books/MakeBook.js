@@ -158,6 +158,7 @@ function UpdateList() {
             link.className = 'mulu';
             //link.href = `../Books/shelter/${element.urlname}`;    //本地
             link.href = `/tool/Books/shelter/${element.urlname}`;   //Github
+            link.target = "_blank";
             link.innerText = element.name;
             form.append(link);
             //form.append("<br><br>");
