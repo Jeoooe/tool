@@ -142,7 +142,7 @@ function UpdateList() {
     books = data.list;
     books.forEach((element) => {
         //不是跳转链接
-        if (! element.urlname.includes('.xhtml')) {
+        if (! element.urlname.includes('/')) {
             btn = document.createElement('button');
             btn.className = 'mulu';
             btn.type = "button";
