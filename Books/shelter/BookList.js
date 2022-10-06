@@ -96,6 +96,18 @@ data : (JSON.parse(`{
         {
             "name":"刀剑神域",
             "urlname":"djsy"
+        },
+        {
+            "name":"旧约 魔法禁书目录",
+            "urlname":"jymj"
+        },
+        {
+            "name":"新约 魔法禁书目录",
+            "urlname":"xymj"
+        },
+        {
+            "name":"创约 魔法禁书目录",
+            "urlname":"cymj"
         }
     ]
 }
