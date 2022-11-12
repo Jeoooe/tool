@@ -108,6 +108,14 @@ data : (JSON.parse(`{
         {
             "name":"创约 魔法禁书目录",
             "urlname":"cymj"
+        },
+        {
+            "name":"龙王的工作",
+            "urlname":"lwdgz"
+        },
+        {
+            "name":"恶魔高校",
+            "urlname":"DXD"
         }
     ]
 }
