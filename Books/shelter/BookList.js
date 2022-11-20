@@ -116,6 +116,10 @@ data : (JSON.parse(`{
         {
             "name":"恶魔高校",
             "urlname":"DXD"
+        },
+        {
+            "name":"凡人修仙传",
+            "urlname":"frxxz"
         }
     ]
 }
