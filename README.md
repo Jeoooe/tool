@@ -1,4 +1,4 @@
-# 小工具
+# 小工具 不止有小说看）
 [工具总览网址](http://jeoooe.github.io/tool/)
 
 + 小说阅读 [alpha](http://jeoooe.github.io/tool/Books/BookReader.html)
@@ -9,4 +9,5 @@
 + 打游戏（简单）
   + [贪吃蛇](http://jeoooe.github.io/tool/Games/Snake.html)
   + [扫雷](http://jeoooe.github.io/tool/Games/saolei.html)
+  + [量纲分析(?)](http://jeoooe.github.io/tool/Games/dimensional_analysis.html)
   + BasicRPG(开发中)(努力完成吧)
