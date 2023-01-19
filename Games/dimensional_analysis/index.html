@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>单位合并器</title>
+<style>
+    button.glyph {
+        width:100px;
+        height:100px;
+        margin: 15px 15px 15px 15px;
+        border-radius: 10px;
+        background-color: white;
+        border-style: solid;
+        border-color:green;
+        font-size: 30px;
+        font-family: cursive;
+        
+    }
+
+    button.glyph:hover{
+        transition-duration:0.4s;
+        background-color: rgb(128, 228, 128);
+    }
+
+    button.glyph:active{
+        transition:all 0s;
+        background-color: rgb(19, 187, 19);
+    }
+
+    p{
+        line-height: 0.5;
+        font-family: cursive;
+    }
+
+    .largename{
+        font-size:30px;
+    }
+
+    .midname{
+        font-size: 16px;
+    }
+</style>
+</head>
+<body>
+    <div id="maincont" style="width:1050px; height:650px">
+        <div id="outputcont" style="width:525px; height:650px;background-color: white;float:left;position: fixed;">
+            <button id="gly1" class="glyph">
+                <p class="largename">N/A</p>
+                <p class="midname">N/A</p>
+            </button>
+            <button id="operator" class="glyph">
+                <p class="largename">X</p>
+                <p class="midname">x</p>
+            </button>
+            <button id="gly2" class="glyph">
+                <p class="largename">N/A</p>
+                <p class="midname">N/A</p>
+            </button>
+            <p></p>
+            <p style="margin-left:15px; font-size:50px;display:inline">=</p>
+            <button id="glyans" class="glyph">
+                <p class="largename">N/A</p>
+                <p class="midname">N/A</p>
+            </button>
+            <p></p>
+            <button id="save" class="glyph">保存</button>
+            <button id="delete" class="glyph">删档</button>
+        </div>
+        <div id="inputcont" style="left:525px;width:525px; height:650px;background-color: white;float:left;position:relative">
+        </div>
+    </div>
+    <script src="units.js"></script>
+    <script src="ati.js"></script>
+</body>
+</html>
