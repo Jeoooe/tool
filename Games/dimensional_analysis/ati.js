@@ -186,7 +186,7 @@ function OperatorBtnClick() {
     //除法
     else {
         curOperator = '*';
-        operatorBtn.innerHTML = '<p class="largename">X</p><p class="midname">X</p>';
+        operatorBtn.innerHTML = '<p class="largename">×</p><p class="midname">×</p>';
     }
     //输出答案
     if (curGlyph[0] !== '/' && curGlyph[1] !== '/') {
