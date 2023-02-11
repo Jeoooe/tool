@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>功德无量</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body background="1.jpeg">
+    <button id="d">
+        积攒功德
+    </button>
+    <div class="as" id="dv">
+        <p>功德+1</p>
+    </div>
+    <script>
+        var DList = [];
+        var avaiList = [];
+        for (let i = 0;i < 10;i++) {
+            let div = document.createElement('div');
+            let p = document.createElement('p');
+            div.classList.toggle('as');
+            div.id = `dv${i}`;
+            p.innerText = '功德+1';
+
+            div.addEventListener('animationend',()=>{
+                DList[i].classList.toggle('ani');
+                div.style.left = '1px';
+                div.style.top = '1px';
+                avaiList[i] =true;
+            });
+
+            DList.push(div);
+            avaiList.push(true);
+
+            div.appendChild(p);
+            document.body.appendChild(div);
+        }
+        document.getElementById('d').onclick = (event)=> {
+            event.preventDefault();
+            for (let i in avaiList) {
+                if (avaiList[i]) {
+                    let div = DList[i]
+                    let left = parseInt(Math.random() * 500 + 100)
+                    let top = parseInt(Math.random() * 350 + 150)
+                    div.style.left = left+'px';
+                    div.style.top = top+'px';
+                    div.classList.toggle('ani');
+                    avaiList[i] = false;
+                    break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
