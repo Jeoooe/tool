@@ -144,6 +144,10 @@ data : (JSON.parse(`{
         {
             "name":"流氓高手",
             "urlname":"lmgs"
+        },
+        {
+            "name":"大主宰",
+            "urlname":"dzz"
         }
     ]
 }
