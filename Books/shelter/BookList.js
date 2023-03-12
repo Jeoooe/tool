@@ -26,10 +26,6 @@ data : (JSON.parse(`{
             "urlname":"gmzz"
         },
         {
-            "name":"诡秘之主：午夜提灯",
-            "urlname":"gmzz_wytd"
-        },
-        {
             "name":"全职高手",
             "urlname":"qzgs"
         },
@@ -152,6 +148,10 @@ data : (JSON.parse(`{
         {
             "name":"女主从书里跑出来了怎么办",
             "urlname":"nzcslpcl"
+        },
+        {
+            "name":"绝望教室",
+            "urlname":"jwjs"
         }
     ]
 }
