@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="codemirror.css">
+  <link rel="stylesheet" href="idea.css">
+  <script src="codemirror.js"></script>
+  <script src="javascript.min.js"></script>
+  <style>
+    button {
+        width: 80px;
+        height:50px;
+        position:absolute
+    }
+    input {
+        position:absolute;
+        top:560px;
+        left:20px
+    }
+  </style>
+</head>
+<body>
+  <textarea id="code"></textarea>
+  <button onclick="saveCode()" style="top:500px;left:20px">Save</button>
+  <button onclick="loadCode()" style="top:500px;left:120px">Load</button>
+  <input id="codefile">
+  <script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+      mode: "javascript",
+      lineNumbers: true,
+      theme: "idea",
+      matchBrackets: true,
+      autoCloseBrackets: true,
+      indentUnit: 2,
+      tabSize: 2,
+      matchBrackets: true,
+      autoCloseBrackets: true
+    });
+
+    // Base64编码函数
+    function base64Encode(str) {
+        // 使用encodeURIComponent将字符串转换为URI组件
+        let encodedStr = encodeURIComponent(str);
+        // 对转换后的字符串进行Base64编码
+        encodedStr = btoa(encodedStr);
+        return encodedStr;
+      }
+  
+  // Base64解码函数
+  function base64Decode(encodedStr) {
+    // 对Base64编码的字符串进行解码
+    let decodedStr = atob(encodedStr);
+    // 使用decodeURIComponent将URI组件转换为字符串
+    decodedStr = decodeURIComponent(decodedStr);
+    return decodedStr;
+  }
+
+  //复制到粘贴板
+  function copyToClipboard(str) {
+    const el = document.createElement('textarea')
+    el.value = str
+    document.body.appendChild(el)
+    el.select()
+    document.execCommand('copy')
+    document.body.removeChild(el)
+  }
+
+    function saveCode() {
+      var code = editor.getValue();
+      var baseStr = base64Encode(code);
+      copyToClipboard(baseStr);
+      // TODO: save code to server or local storage
+    }
+
+    function loadCode() {
+      // TODO: load code from server or local storage
+      var str = document.getElementById('codefile').value;
+      var code = base64Decode(str)
+      editor.setValue(code);
+    }
+  </script>
+</body>
+</html>
