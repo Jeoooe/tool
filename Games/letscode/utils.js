@@ -31,8 +31,8 @@ function jq(str) {
     else this.dm.value = a;
   };
   
-  jq.prototype.on = function (a, b, c) {
-    this.dm.addEventListener(a, () => b(this), c);
+  jq.prototype.on = function (event, func, capture) {
+    this.dm.addEventListener(event,function(event) {func(event)}, capture);
     return this;
   };
   
@@ -109,20 +109,20 @@ function jq(str) {
   btn.text("off");
   btn.on(
     "click",
-    function (self) {
-      if (out.css("display") == "none") {
-        out.css("display", "");
-        inp.css("display", "");
-        rbtn.css("display", "");
-        cls.css("display", "");
-        self.text("off");
-      } else {
-        out.css("display", "none");
-        inp.css("display", "none");
-        rbtn.css("display", "none");
-        cls.css("display", "none");
-        self.text("on");
-      }
+    function (event) {
+        if (out.css("display") == "none") {
+          out.css("display", "");
+          inp.css("display", "");
+          rbtn.css("display", "");
+          cls.css("display", "");
+          this.innerText="off";
+        } else {
+          out.css("display", "none");
+          inp.css("display", "none");
+          rbtn.css("display", "none");
+          cls.css("display", "none");
+          this.innerText="on";
+        }
     },
     false
   );
@@ -147,3 +147,4 @@ function jq(str) {
     .add(rbtn)
     .add(cls);
   jq.body.add(jq.logger);
+  jq.logger = out;
