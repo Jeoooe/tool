@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <link rel="stylesheet" href="codemirror.css">
   <link rel="stylesheet" href="idea.css">
@@ -7,22 +8,33 @@
   <script src="javascript.min.js"></script>
   <style>
     button {
-        width: 80px;
-        height:50px;
-        position:absolute
+      width: 80px;
+      height: 50px;
+      position: absolute
     }
+
     input {
-        position:absolute;
-        top:560px;
-        left:20px
+      position: absolute;
+      top: 560px;
+      left: 20px;
+    }
+
+    div#main {
+      position:absolute;
+      left:0px;
+      top:650px;
     }
   </style>
 </head>
+
 <body>
   <textarea id="code"></textarea>
   <button onclick="saveCode()" style="top:500px;left:20px">Save</button>
   <button onclick="loadCode()" style="top:500px;left:120px">Load</button>
+  <button onclick="runCode()" style="top:500px;left:220px">Run</button>
   <input id="codefile">
+  <div id="main"></div>
+  <script src="utils.js"></script>
   <script>
     var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
       mode: "javascript",
@@ -38,32 +50,33 @@
 
     // Base64编码函数
     function base64Encode(str) {
-        // 使用encodeURIComponent将字符串转换为URI组件
-        let encodedStr = encodeURIComponent(str);
-        // 对转换后的字符串进行Base64编码
-        encodedStr = btoa(encodedStr);
-        return encodedStr;
-      }
-  
-  // Base64解码函数
-  function base64Decode(encodedStr) {
-    // 对Base64编码的字符串进行解码
-    let decodedStr = atob(encodedStr);
-    // 使用decodeURIComponent将URI组件转换为字符串
-    decodedStr = decodeURIComponent(decodedStr);
-    return decodedStr;
-  }
+      // 使用encodeURIComponent将字符串转换为URI组件
+      let encodedStr = encodeURIComponent(str);
+      // 对转换后的字符串进行Base64编码
+      encodedStr = btoa(encodedStr);
+      return encodedStr;
+    }
 
-  //复制到粘贴板
-  function copyToClipboard(str) {
-    const el = document.createElement('textarea')
-    el.value = str
-    document.body.appendChild(el)
-    el.select()
-    document.execCommand('copy')
-    document.body.removeChild(el)
-  }
+    // Base64解码函数
+    function base64Decode(encodedStr) {
+      // 对Base64编码的字符串进行解码
+      let decodedStr = atob(encodedStr);
+      // 使用decodeURIComponent将URI组件转换为字符串
+      decodedStr = decodeURIComponent(decodedStr);
+      return decodedStr;
+    }
 
+    //复制到粘贴板
+    function copyToClipboard(str) {
+      const el = document.createElement('textarea')
+      el.value = str
+      document.body.appendChild(el)
+      el.select()
+      document.execCommand('copy')
+      document.body.removeChild(el)
+    }
+
+    //保存代码
     function saveCode() {
       var code = editor.getValue();
       var baseStr = base64Encode(code);
@@ -71,12 +84,25 @@
       // TODO: save code to server or local storage
     }
 
+    //加载代码
     function loadCode() {
       // TODO: load code from server or local storage
       var str = document.getElementById('codefile').value;
-      var code = base64Decode(str)
+      var code = base64Decode(str);
       editor.setValue(code);
+    }
+
+    //运行代码
+    function runCode() {
+      var code = editor.getValue();
+      try {
+        eval(code);
+      }
+      catch (e) {
+        jq.log(e);
+      }
     }
   </script>
 </body>
+
 </html>
