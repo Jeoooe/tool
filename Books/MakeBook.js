@@ -3,7 +3,12 @@ var curChapter = 0; //章节数 - 1
 var books = [];
 var GoToLock = false;    //进程锁
 var curBook = '';	 //当前书目
-var projects = {};
+var projects = {};  
+$.ajaxSetup({cache:false});
+//随机数
+function rand(m,n) {
+    return Math.random() * (m-n) + n;
+}
 //数组除空
 var RmvEmp = (arr) => {
 	for(let i = 0; i < arr.length; i++) {
@@ -73,6 +78,7 @@ function GoToChapter(index) {
     if (txt[index]) {
         $('#content').html('Loading');  //先变成loading防止误会
         $('#content').html(txt[index].split('\n').join('<br>'));
+        window.scrollTo(0,0);
         curChapter = index; //更新当前章节数
         return 1;
     }
@@ -100,7 +106,19 @@ function Get(urlName,func) {
     //txt文本
     if (urlName.includes('.txt'))  {
         //$.get(`../Books/shelter/${urlName}`,func); //本地
+        /* $.get
         $.get(`/tool/Books/shelter/${urlName}`,func);   //Github
+        */
+       let jqajx = $.ajax(`/tool/Books/shelter/${urlName}}`)
+        .done(func)
+        .fail(function(xhr,status) {
+            BackToList();
+            console.log(status);
+       })
+       .always(function() {
+            console.log("请求结束");
+       });
+       console.log('读取书本:' + urlName);
     }
 }
 
