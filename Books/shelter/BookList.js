@@ -152,6 +152,10 @@ data : (JSON.parse(`{
         {
             "name":"绝望教室",
             "urlname":"jwjs"
+        },
+        {
+            "name":"惊悚乐园",
+            "urlname":"jsly"
         }
     ]
 }
