@@ -99,15 +99,16 @@ function NextChapter() {
  * 
  * @param {String} urlName 链接名
  * @param {function} func 运行函数
+ * @param {function} fail 错误
  */
-function Get(urlName,func) {
+function Get(urlName,func,fail) {
+
     //使用资源仓库
     //txt文本
     if (urlName.includes('.txt'))  {
         //$.get(`../Books/shelter/${urlName}`,func); //本地
-        /* $.get
-        $.get(`/tool/Books/shelter/${urlName}`,func);   //Github
-        */
+        $.get(`/tool/Books/shelter/${urlName}`,func).fail(fail);   //Github
+        /*
        let jqajx = $.ajax(`/tool/Books/shelter/${urlName}}`)
         .done(func)
         .fail(function(xhr,status) {
@@ -118,6 +119,7 @@ function Get(urlName,func) {
             console.log("请求结束");
        });
        console.log('读取书本:' + urlName);
+       */
     }
 }
 
@@ -141,7 +143,11 @@ function GoToBook(bookname) {
                 BookReadInit();
                 GoToLock = false;   //开锁
             }
-        })
+        },(err) => {
+            BackToList();
+            GoToLock = false;   //开锁
+            console.log(err);
+        });
 	}
 	
 	//重复进入同一本书
