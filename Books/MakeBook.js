@@ -4,7 +4,6 @@ var books = [];
 var GoToLock = false;    //进程锁
 var curBook = '';	 //当前书目
 var projects = {};  
-$.ajaxSetup({cache:false});
 //随机数
 function rand(m,n) {
     return Math.random() * (m-n) + n;
