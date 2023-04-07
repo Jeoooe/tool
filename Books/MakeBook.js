@@ -20,7 +20,7 @@ var RmvEmp = (arr) => {
 }
 
 //LOADING界面
-function ShowLoad() {
+function ShowLoading() {
     for(let key in projects) {
         projects[key].hide();
     }
@@ -132,7 +132,7 @@ function Get(urlName,func,fail) {
 function GoToBook(bookname) {
     if (GoToLock) return;   //防止多次加载
 	GoToLock = true;    //锁
-    ShowLoad(); //LOADING
+    ShowLoading(); //LOADING
 	if (curBook !== bookname) {	//不重复进入
 		curBook = bookname;
         urlname = bookname + '.txt';
@@ -170,7 +170,7 @@ function UpdateList() {
             btn.className = 'mulu';
             btn.type = "button";
             btn.name=element.urlname;
-            btn.onclick = () => {GoToBook(element.urlname)};
+            //btn.onclick = () => {GoToBook(element.urlname)};
             btn.innerText = element.name;
             form.append(btn);
             //form.append("<br><br>")
@@ -187,12 +187,16 @@ function UpdateList() {
             //form.append("<br><br>");
         }
     })
+    //采用事件代理处理按键
+    $('#booklist').delegate('button','click',function(event) {
+        GoToBook(event.currentTarget.name);
+    })
     HideLoad(projects.BOOKLIST);
 }
 
 //书架初始化
 function ShelterInit() {
-    ShowLoad();
+    ShowLoading();
     //已加载的情况
     if (books.length !== 0) {
         HideLoad(projects.BOOKLIST);
@@ -205,6 +209,6 @@ function ShelterInit() {
 //返回目录
 function BackToList() {
     //txt = ''; 
-    ShowLoad();
+    ShowLoading();
     ShelterInit();
 }
