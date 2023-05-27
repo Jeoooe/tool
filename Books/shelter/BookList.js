@@ -164,7 +164,7 @@ data : (JSON.parse(`{
         {
             "name":"织田信奈的野望",
             "urlname":"ztxndyw"
-        },
+        }
     ]
 }
 `))
