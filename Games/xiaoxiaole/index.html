@@ -27,10 +27,25 @@
   position: relative;
   float: left;
 }
+#timer {
+    position:absolute;
+    left:5%;
+    top:20%;
+    font-size: 30px;
+    color:white;
+}
+#score {
+    position:absolute;
+    left:5%;
+    top:40%;
+    font-size: 30px;
+    color:white;}
 </style>
 </head>
 <body bgcolor="#868398"  onload="init()">
  <script type = "text/javaScript" >
+var timer = 40; //时间
+var score = 0;  //分数
 var divy = new Array();
 var sum = 0,lastx = 0,lasty = 0,l_rnum = 0,o_dnum = 0,sum = 0,clickedimg = "",
 left_x = 0,left_y = 0,up_x = 0,up_y = 0;
@@ -91,6 +106,8 @@ function exchange(obj, x, y) {
                     //alert("消除成功！！！新的动物马上赶来！！");
                     addimg();              //添加图片
                     scanallimgs();         //扫描随机添加上来的图片是否可以消除
+                    score++;    //加分
+                    document.getElementById('score').innerText = '分数:' + score;
                 } else {
                     //两张图片都不满足交换，就还原位置
                     imgdata[x][y] = _clickedimg[1];
@@ -242,8 +259,17 @@ function scanallimgs() {
         addimg();
     }
 }
+setInterval(function() {
+    timer--;
+    document.getElementById('timer').innerText = '剩余时间:' + timer + 's';
+    if (timer <= 0) {
+        document.body.innerHTML = `<div id="score">结束了,你的分数是:${score}</div>`
+    }
+},1000)
 </script>
 <div id="box" >
 </div>
+<div id="score">分数:0</div>
+<div id="timer">剩余时间:40s</div>
 </body>
 </html>
