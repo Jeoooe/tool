@@ -372,7 +372,7 @@ function getNum(lowerValue, upperValue) {
 function renderOre(arr) {
     for (var i = 0; i < arr.length; i++) {
         // 通过getNum函数获取图片xy轴的坐标
-        var top = getNum(230, 750), left = getNum(0, 450);
+        var top = getNum(300, 750), left = getNum(0, 450);
         //随机旋转角度
         var rotate = getNum(0, 360);
         //根据分值绘制大小
