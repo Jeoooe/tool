@@ -1,0 +1,221 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+@font-face {
+    font-family:'hk';
+    src: url('../font/hk.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+body{
+    background-color: #000;
+    font-family: hk;
+}
+.remPx{
+    position: absolute;
+    top: 0;
+    height: 1rem;
+}
+/*加载图片*/
+.loadingHtml{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+}
+.loadingHtml>img{
+    width: 100%;
+    height: 100%;
+}
+/*游戏结束显示盒子*/
+.gameStopBox{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 110;
+    background: url("../image/gameStopBg.png");
+    background-size: cover;
+    display: none;
+}
+.gameAllScoreBox{
+    position: absolute;
+    width: 11rem;
+    height: 15.3rem;
+    background: url(../image/finish.png);
+    background-size: cover;
+    left: 50%;
+    margin-left: -5.5rem;
+    top: 7rem;
+}
+.gameAllScore{
+    position: absolute;
+    width: 8rem;
+    height: 2.1rem;
+    line-height: 1.9rem;
+    background: url(../image/score.png);
+    background-size: cover;
+    left: 1rem;
+    top: 8.5rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 0 0 #f46c1d, -2px 0 0 #f46c1d, 0 2px 0 #f46c1d, 0 -2px 0 #f46c1d;
+}
+.gameLevel{
+    top: 12rem;
+}
+.gameStopText{
+    position: absolute;
+    top: 7.5rem;
+    left: 1rem;
+    font-weight: bold;
+    color: #603813;
+    font-size: .8rem;
+}
+.gameStopLevelText{
+    top: 11rem;
+}
+.gameStopClose{
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 4.2rem;
+    right: .1rem;
+}
+/*主体*/
+.main{
+    width: 20rem;
+    height: 100%;
+    background: #fff;
+    margin: 0 auto;
+    position: relative;
+    background: url("../image/gameBg1.png");
+    background-size: cover;
+    overflow: hidden;
+}
+/*倒计时盒子*/
+.timeBrandBox{
+    position: absolute;
+    width: 4rem;
+    height: 4.3rem;
+    background: url(../image/timeBrand1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 4.6rem;
+    left: 0.5rem;
+}
+/*用户分数*/
+.userScore{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #793b3f;
+    font-size: .7rem;
+    width: 100%;
+    text-align: center;
+    height: 1.2rem;
+    line-height: 1.2rem;
+}
+/*倒计时*/
+.gameTime{
+    position: absolute;
+    top: 1.5rem;
+    left: 0;
+    color: #793b3f;
+    font-size: .7rem;
+    width: 100%;
+    text-align: center;
+    height: 1rem;
+    line-height: 1rem;
+}
+.levelBrandBox{
+    position: absolute;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: url(../image/levelBrand1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: -0.5rem;
+    right: 1.5rem;
+}
+.levelNum{
+    position: absolute;
+    top: 1.4rem;
+    left: 0;
+    color: #793b3f;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+    line-height: 1rem;
+}
+/*点击区域*/
+.tabBox{
+    width: 100%;
+    height: 70vh;
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+}
+/*矿车*/
+.cart{
+    width: 10rem;
+    height: 9.5rem;
+    position: absolute;
+    left: 5rem;
+    top: 0.8rem;
+    z-index: 10;
+    background-position: 0.1rem -37.5rem;
+}
+/*头部*/
+.gghead {
+    z-index: 30;
+    left:240px;
+    top:50px;
+    max-width: 60px;
+    max-height: 60px;
+    position:absolute;
+}
+/*钩子*/
+.hookBox{
+    width: 1.5rem;
+    height: 4rem;
+    position: absolute;
+    left: 9.2rem;
+    top: 8rem;
+    transform-origin: top center;
+    z-index: 1;
+}
+.hook{
+    width: 1.5rem;
+    height: 1.2rem;
+    position: absolute;
+    bottom: 0;
+}
+.hookPoint{
+    position: absolute;
+    left: 0.79rem;
+    bottom: 0.1rem;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    visibility: hidden;
+}
+/*弹出线*/
+.hookLine{
+    width: 0.16rem;
+    height: 3rem;
+    position: absolute;
+    top: 8rem;
+    left: 9.87rem;
+    background: #6b3e0f;
+    transform-origin: top center;
+    z-index: 20;
+}
+/*矿石*/
+.oreImg{
+    width: 2rem;
+}

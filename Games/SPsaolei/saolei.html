@@ -10,9 +10,55 @@
         margin: 0;
         padding: 0;
     }
-    img {
+    img.item{
         max-width: 30px;
         max-height: 30px;
+    }
+    img.endimg{
+        position:absolute;
+        left:30%;
+        animation-name: gg;
+        animation-duration: 0.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    @keyframes gg{
+        10% {
+            transform: rotate(0.1turn);
+        }
+        20% {
+            transform: rotate(0.2turn);
+        }
+        30% {
+            transform: rotate(0.3turn);
+        }
+        40%{
+            transform: rotate(0.4turn);
+        }
+        50% {
+            transform: rotate(0.5turn);
+        }
+        60% {
+            transform: rotate(0.6turn);
+        }
+        70%{
+            transform: rotate(0.76turn);
+        }
+        80%{
+            transform: rotate(0.8turn);
+        }
+        90% {
+            transform: rotate(0.9turn);
+        }
+        100%{
+            transform: rotate(1turn);
+        }
+    }
+    p.ggtxt{
+        font-size: 30px;
+        position: absolute;
+        left:40%;
+        top:20%
     }
     .main {
         display: flex;
@@ -72,9 +118,6 @@
         border: 3px solid rgba(255, 100, 100, 0.4);
         background-color: rgba(0, 0, 0, 0.1);
         float: left;
-    }
-    #box > .bomb {
-
     }
     .main .header {
         flex-shrink: 0;
@@ -290,10 +333,9 @@
             }
 
             changeFlag(target) {
-                console.log (target);
                 if(target.className === 'block'){
                     target.className = 'flag'
-                    target.innerHTML = '<img src="flag.jpg"> </img>'
+                    target.innerHTML = '<img src="flag.jpg" class="item"> </img>'
                     this.flagList.add(parseInt(target.dataset.id))
                 } else if (target.className === 'flag'){
                     target.className = 'block'
@@ -309,7 +351,7 @@
                 //如果是炸弹
                 if(this.bombList.some((i) => { return i === parseInt(item.dataset.id) })){
                     item.className = 'bomb';
-                    item.innerHTML = `<img src="bomb.jpg"></img>`
+                    item.innerHTML = `<img src="bomb.jpg" class="item"></img>`
                     this.fail()
                 } else {
                     this.showList.push(parseInt(item.dataset.id))
@@ -370,9 +412,9 @@
             // 失败
             fail (){
                 //let bool = confirm('踩到雷，失败了！')
-                $('.main').append($('<p>踩雷了,失败了</p>'))
-                setTimeout(() => {window.location.reload()}, 5000)
-                    
+                $('.main').append('<p class="ggtxt">踩雷了,失败了</p>');
+                setTimeout(() => {window.location.reload()}, 15000)
+                setTimeout(this.showEnd, 3000)
             }
 
             // 成功
@@ -381,6 +423,7 @@
                 $('.main').append($('<p>成功了！成功了！带成功！</p>'))
                 clearInterval(this.timer)
                 //alert('你的生命减少了 ' + document.querySelector('#time').innerText + ' 秒')
+                this.showEnd();
             }
 
             // 右键事件
@@ -401,6 +444,9 @@
                         }
                     }
                 })
+            }
+            showEnd() {
+                document.body.innerHTML = `<img src="end.jpg" class="endimg"> </img>`;
             }
         }
 
