@@ -1,0 +1,22 @@
+<html>
+<head>
+<title> 拼图</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<!--Menu-->
+<div id="menu">
+    <button onclick="gameStart(1)" class="dif1">简单</button>
+    <button onclick="gameStart(2)" class="dif2">中等</button>
+    <button onclick="gameStart(3)" class="dif3">困难</button>
+</div>
+<!--GamePad-->
+<div id="gamepad">
+    <div id="fifteen"></div>
+</div>
+<script>
+    document.getElementById('gamepad').style.display = 'none';
+</script>
+<script src="main.js"></script>
+</body>
+</html>

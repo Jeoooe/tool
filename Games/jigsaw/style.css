@@ -1,0 +1,64 @@
+#fifteen {
+    left:40%;
+    top:20%;
+    position:absolute;
+}
+#fifteen div{
+    width: 86px;
+    height: 86px;
+    border: 1px solid #CCCCCC;
+    margin: 1px;
+    /*background-image: url(image/3.jpg);*/
+    background-repeat: no-repeat;
+    position: absolute;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+ }
+ 
+ .row1 {top: 0px;}
+ .row2 {top: 88px;}
+ .row3 {top: 176px;}
+ .row4 {top: 264px;}
+ .col1 {left: 0px;}
+ .col2 {left: 88px;}
+ .col3 {left: 176px;}
+ .col4 {left: 264px;}
+ 
+ #pic1 {background-position: -0px 0px;}
+ #pic2 {background-position: -88px 0px;}
+ #pic3 {background-position: -176px 0px;}
+ #pic4 {background-position: -264px 0px;}
+ #pic5 {background-position: 0px -88px;}
+ #pic6 {background-position: -88px -88px;}
+ #pic7 {background-position: -176px -88px;}
+ #pic8 {background-position: -264px -88px;}
+ #pic9 {background-position: 0px -176px;}
+ #pic10 {background-position: -88px -176px;}
+ #pic11 {background-position: -176px -176px;}
+ #pic12 {background-position: -264px -176px;}
+ #pic13 {background-position: 0px -264px;}
+ #pic14 {background-position: -88px -264px;}
+ #pic15 {background-position: -176px -264px;}
+ #pic16 {background-position: -264px -264px;}
+ #fifteen #empty {border: none; background: none;}
+
+ button {
+    width: 200px;
+    height: 100px;
+    position: absolute;
+ }
+ button.dif1{
+    left:20%;
+    top:30%;
+ }
+ button.dif2{
+    left:40%;
+    top:30%;
+ }
+ button.dif3{
+    left:60%;
+    top:30%;
+ }
