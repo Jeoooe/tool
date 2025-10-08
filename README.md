@@ -9,5 +9,7 @@
 + 打游戏（简单）
   + [贪吃蛇](http://jeoooe.github.io/tool/Games/Snake.html)
   + [扫雷](http://jeoooe.github.io/tool/Games/saolei.html)
-  + [量纲分析(?)](http://jeoooe.github.io/tool/Games/dimensional_analysis.html)
+  + [量纲分析(?)](https://jeoooe.github.io/tool/Games/dimensional_analysis/index.html)
   + BasicRPG(开发中)(努力完成吧)
+
+# 点击输入文字
